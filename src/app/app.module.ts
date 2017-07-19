@@ -9,6 +9,14 @@ import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { DeckbuilderComponent } from './deckbuilder/deckbuilder.component';
+import { SearchComponent } from './search/search.component';
+import { CardDisplayComponent } from './card-display/card-display.component';
+import { DeckChartComponent } from './deck-chart/deck-chart.component';
+import { ExportDeckFormComponent } from './export-deck-form/export-deck-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DeckListComponent } from './deck-list/deck-list.component';
+import { AboutComponent } from './about/about.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -20,7 +28,15 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DeckbuilderComponent,
+    SearchComponent,
+    CardDisplayComponent,
+    DeckChartComponent,
+    ExportDeckFormComponent,
+    UserProfileComponent,
+    DeckListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
