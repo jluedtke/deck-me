@@ -14,14 +14,28 @@ md-toolbar {
 
 #logo {
   font-size: 30px;
+  font-family: 'Anton', sans-serif;
+}
+#logo:hover {
+  cursor: pointer;
 }
 
 #navMenu {
   font-size: 20px;
   width: 125px;
+  font-family: 'Anton', sans-serif;
+}
+
+.copyRight {
+  font-size: 16px;
+  font-family: 'Anton', sans-serif;
 }
 
 md-icon {
   font-size: 22px;
   margin-right: 5px;
+}
+
+footer {
+  font-family: 'Anton', sans-serif;
 }
