@@ -3,14 +3,14 @@
   <!-- TILE #1 -->
   <md-grid-tile colspan='1' rowspan='3'>
     <div class="export-deck">
-      <app-export-deck-form></app-export-deck-form>
-    </div>
-    <div class="deck-list">
-      <app-deck-list (clickSender)="setUpdateDeck($event)"></app-deck-list>
+      <app-export-deck-form [childDeckToSave]="deckToSave"></app-export-deck-form>
     </div>
   </md-grid-tile>
   <!-- TILE #2 -->
   <md-grid-tile colspan='3' rowspan='1'>
+    <div class="deck-list">
+      <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
+    </div>
     <app-search (clickSender)="addToDeck($event)"></app-search>
   </md-grid-tile>
   <!-- TILE #3 -->

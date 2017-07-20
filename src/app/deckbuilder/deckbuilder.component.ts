@@ -13,26 +13,21 @@ import { Card } from '../card.model';
 })
 export class DeckbuilderComponent implements OnInit {
   // styles array
-  tiles = [
-   {text: 'One', cols: 1, rows: 3, color: 'lightblue', height: '100px;'},
-   {text: 'Two', cols: 3, rows: 1, color: 'lightgreen', height: '300px;'},
-   {text: 'Three', cols: 3, rows: 1, color: 'lightpink', height: '300px;'},
-   {text: 'Four', cols: 3, rows: 1, color: '#DDBDF1', height: '300px;'},
- ];
-
 
   updatedDeck: Deck;
+  deckToSave: Deck = this.updatedDeck;
 
   constructor(private fbaService: FirebaseToAppService) { }
 
   ngOnInit() {
     if (this.updatedDeck == null) {
-      this.updatedDeck = new Deck([], "New Deck");
+      this.updatedDeck = new Deck([], "wNxVre4mWe");
     }
   }
 
   addToDeck(cardId: string) {
     this.updatedDeck.cards.push(cardId);
+    this.deckToSave = this.updatedDeck;
     this.fbaService.updateDeck(this.updatedDeck);
   }
 
@@ -41,5 +36,4 @@ export class DeckbuilderComponent implements OnInit {
     console.log(this.updatedDeck.name);
   }
 
-  // get updatedDeck or something from decklist
 }

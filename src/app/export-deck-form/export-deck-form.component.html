@@ -1,3 +1,12 @@
-<p>
-  export-deck-form works!
-</p>
+<h3>Save Deck</h3>
+
+<form *ngIf="childDeckToSave">
+  <label>Deck Name: </label>
+  <input #deckName placeholder={{childDeckToSave.name}}>
+  <button type="submit" (click)="submitForm(deckName.value); deckName.value = '';"></button>
+</form>
+<form *ngIf="!childDeckToSave">
+  <label>Deck Name: </label>
+  <input #deckName>
+  <button type="submit" (click)="submitForm(deckName.value); deckName.value = '';"></button>
+</form>
