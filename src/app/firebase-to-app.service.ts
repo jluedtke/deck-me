@@ -7,10 +7,13 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class FirebaseToAppService {
   decks: FirebaseListObservable<any[]>;
+  cards: FirebaseListObservable<any[]>;
+  deckToUpdate: FirebaseListObservable<any[]>;
   cardName: string;
 
   constructor(private database: AngularFireDatabase, private http: Http) {
     this.decks = this.database.list('Decks');
+    this.cards = this.database.list('Cards');
   }
 
   getCards() {
@@ -25,10 +28,13 @@ export class FirebaseToAppService {
     return this.decks;
   }
 
+  updateDeck(deck: Deck, deckId: string) {
+    this.decks.update(deckId, deck);
+  }
 
-
-  getCardById(cardId: string) {
-    return this.database.object('/Cards/' + cardId);
+  addCard(newCard: Card) {
+    let cardId = newCard.multiverseid.toString();
+    this.cards.update(cardId, newCard);
   }
 
 }
