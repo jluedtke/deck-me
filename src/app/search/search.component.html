@@ -1,3 +1,10 @@
 <label>Card Name</label>
 <input type="text" #cardName>
 <button (click)="searchForCard(cardName.value)">Search</button>
+
+<div class="search-card-display">
+  <img src="{{(firstInCards)?.imageUrl}}" alt="">
+  <ul *ngFor="let card of cards">
+    <li (dblclick)="addCardToDeck(card)" (click)="setFirstInCards(card)">{{card.name}}</li>
+  </ul>
+</div>

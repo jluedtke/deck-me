@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-search',
@@ -9,7 +11,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [FirebaseToAppService]
 })
 export class SearchComponent implements OnInit {
-  cards: FirebaseListObservable<any[]>;
+  cards:any[] = null;
+  firstInCards: any = null;
 
 
   constructor(private fbaService: FirebaseToAppService) { }
@@ -20,16 +23,20 @@ export class SearchComponent implements OnInit {
 
   //Form search stuff
   searchForCard(name: string) {
-    console.log("Start");
-    var properString: string = name.replace(/\w\S*/g, ( text => text[0].toUpperCase() + text.substr(1).toLowerCase() ));
-    this.fbaService.filterBy(properString);
-    this.cards = this.fbaService.getCards();
-    console.log(this.cards);
-    this.cards.subscribe(data => {
-      data.forEach(card => {
-        console.log(card.name);
-      });
+    this.fbaService.filterByName(name);
+    this.fbaService.getCards().subscribe(data => {
+      this.cards = data.json().cards;
+      this.firstInCards = this.cards[0]
+      console.log(this.firstInCards);
     });
+  }
+
+  setFirstInCards(card) {
+    this.firstInCards = card;
+  }
+
+  addCardToDeck(card) {
+    console.log(card);
   }
 
 }

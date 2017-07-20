@@ -1,31 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Deck } from './deck.model';
+import { Http, Response } from '@angular/http';
+import { Card } from './card.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class FirebaseToAppService {
-  cardsFirst10: FirebaseListObservable<any[]>;
-  cardIds: any[];
-  nameSubject: Subject<any>;
+  decks: FirebaseListObservable<any[]>;
+  cardName: string;
 
-  constructor(private database: AngularFireDatabase) {
-    this.nameSubject = new Subject();
-    this.cardsFirst10 = database.list('/Cards', {
-      query: {
-        orderByChild: 'name',
-        startAt: this.nameSubject,
-        limitToFirst: 3,
-      }
-    });
-  }
-
-  filterBy(name: string) {
-    this.nameSubject.next(name);
+  constructor(private database: AngularFireDatabase, private http: Http) {
+    this.decks = this.database.list('Decks');
   }
 
   getCards() {
-    return this.cardsFirst10;
+    return this.http.get("https://api.magicthegathering.io/v1/cards?name=" + this.cardName + "&pageSize=5")
+  }
+
+  filterByName(name: string) {
+    this.cardName = name;
+  }
+
+  getDecks() {
+    return this.decks;
   }
 
 
