@@ -1,3 +1,6 @@
-<p>
-  deck-list works!
-</p>
+<h3>User Decks</h3>
+
+<!-- decks from Firebase should be decks from user from firebase -->
+<ul *ngFor="let deck of decksFromFirebase">
+  <li><a (click)="updateDeckClicked(deck)">{{deck.name}}</a></li>
+</ul>

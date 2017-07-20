@@ -13,6 +13,7 @@ export class FirebaseToAppService {
 
   constructor(private database: AngularFireDatabase, private http: Http) {
     this.decks = this.database.list('Decks');
+    this.database.list('Decks').remove("New Deck");
     this.cards = this.database.list('Cards');
   }
 
@@ -28,8 +29,29 @@ export class FirebaseToAppService {
     return this.decks;
   }
 
-  updateDeck(deck: Deck, deckId: string) {
-    this.decks.update(deckId, deck);
+  updateDeck(deck) {
+    if (deck.$key == undefined || deck.name == "New Deck") {
+      this.createDeck(deck);
+    } else {
+      var userDeckInFirebase = this.getDeckById(deck.$key);
+      userDeckInFirebase.update({
+        cards: deck.cards,
+        name: deck.name
+      });
+
+    }
+  }
+
+  getDeckById(deckId: string) {
+    return this.database.object('Decks/' + deckId);
+  }
+
+  createDeck(deck: Deck) {
+    if (deck.name == "New Deck") {
+      this.decks.update("New Deck", deck);
+      return;
+    }
+    this.decks.push(deck);
   }
 
   addCard(newCard: Card) {

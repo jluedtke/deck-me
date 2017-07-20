@@ -24,8 +24,13 @@ export class DeckbuilderComponent implements OnInit {
 
   addToDeck(cardId: string) {
     this.updatedDeck.cards.push(cardId);
-    let deckId = this.updatedDeck.name;
-    this.fbaService.updateDeck(this.updatedDeck, deckId);
+    this.fbaService.updateDeck(this.updatedDeck);
   }
 
+  setUpdatedDeck(deck: Deck) {
+    this.updatedDeck = deck;
+    console.log(this.updatedDeck.name);
+  }
+
+  // get updatedDeck or something from decklist
 }

@@ -1,7 +1,26 @@
-<h1>Deckbuilding header</h1>
-<app-deck-list></app-deck-list>
-<app-search (clickSender)="addToDeck($event)"></app-search>
-<app-card-display></app-card-display>
-<app-deck-chart></app-deck-chart>
-<app-export-deck-form></app-export-deck-form>
-<h1>Deckbuilding Footer</h1>
+<!-- GRID START -->
+<md-grid-list cols="4" rowHeight="500px" gutterSize='20px'>
+  <!-- TILE #1 -->
+  <md-grid-tile colspan='1' rowspan='3'>
+    <div class="export-deck">
+      <app-export-deck-form></app-export-deck-form>
+    </div>
+    <div class="deck-list">
+      <app-deck-list (clickSender)="setUpdateDeck($event)"></app-deck-list>
+    </div>
+  </md-grid-tile>
+  <!-- TILE #2 -->
+  <md-grid-tile colspan='3' rowspan='1'>
+    <app-search (clickSender)="addToDeck($event)"></app-search>
+  </md-grid-tile>
+  <!-- TILE #3 -->
+  <md-grid-tile colspan='3' rowspan='1'>
+    <app-card-display></app-card-display>
+  </md-grid-tile>
+  <!-- TILE #4 -->
+  <md-grid-tile colspan='3' rowspan='1'>
+    <app-deck-chart></app-deck-chart>
+  </md-grid-tile>
+
+</md-grid-list>
+<!-- GRID END -->
