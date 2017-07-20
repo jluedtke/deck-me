@@ -1,0 +1,27 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+md-toolbar {
+  background-color: #463911;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 3px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  font-size: 30px;
+}
+
+#navMenu {
+  font-size: 20px;
+  width: 125px;
+}
+
+md-icon {
+  font-size: 22px;
+  margin-right: 5px;
+}

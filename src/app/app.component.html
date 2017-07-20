@@ -1,7 +1,16 @@
-<p><a routerLink="">Home</a></p>
-<p><a routerLink="deckbuilder">Deck Builder</a></p>
-<p><a routerLink="about">About</a></p>
-<p><a routerLink="profile">Profile</a></p>
+<header>
+  <md-toolbar>
+      <span id="logo" routerLink=''>DeckMe</span>
+      <span class="toolbar-spacer"></span>
+      <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+  </md-toolbar>
+  <md-menu #appMenu="mdMenu" id="dropDown">
+    <button md-menu-item routerLink=''>Home</button>
+    <button md-menu-item routerLink='deckbuilder'>Deck Builder</button>
+    <button md-menu-item routerLink='about'>About</button>
+    <button md-menu-item routerLink='profile'>Profile</button>
+  </md-menu>
+</header>
 <hr>
 <router-outlet></router-outlet>
 <hr>
