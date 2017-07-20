@@ -8,7 +8,7 @@ import { Card } from '../card.model';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  styleUrls: ['./search.component.scss'],
   providers: [FirebaseToAppService]
 })
 export class SearchComponent {

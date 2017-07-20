@@ -8,7 +8,7 @@ import { Card } from '../card.model';
 @Component({
   selector: 'app-deckbuilder',
   templateUrl: './deckbuilder.component.html',
-  styleUrls: ['./deckbuilder.component.css'],
+  styleUrls: ['./deckbuilder.component.scss'],
   providers: [FirebaseToAppService]
 })
 export class DeckbuilderComponent implements OnInit {
