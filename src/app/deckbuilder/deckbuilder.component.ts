@@ -12,6 +12,15 @@ import { Card } from '../card.model';
   providers: [FirebaseToAppService]
 })
 export class DeckbuilderComponent implements OnInit {
+  // styles array
+  tiles = [
+   {text: 'One', cols: 1, rows: 3, color: 'lightblue', height: '100px;'},
+   {text: 'Two', cols: 3, rows: 1, color: 'lightgreen', height: '300px;'},
+   {text: 'Three', cols: 3, rows: 1, color: 'lightpink', height: '300px;'},
+   {text: 'Four', cols: 3, rows: 1, color: '#DDBDF1', height: '300px;'},
+ ];
+
+
   updatedDeck: Deck;
 
   constructor(private fbaService: FirebaseToAppService) { }
