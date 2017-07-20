@@ -1,27 +1,34 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Deck } from './deck.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class FirebaseToAppService implements OnInit {
-  cards: FirebaseListObservable<any[]>;
+export class FirebaseToAppService {
+  cardsFirst10: FirebaseListObservable<any[]>;
   cardIds: any[];
+  nameSubject: Subject<any>;
 
   constructor(private database: AngularFireDatabase) {
-    this.cards = database.list('Cards');
-  }
-
-  ngOnInit() {
-    this.cards.subscribe(data => {
-      data.forEach(card => {
-        this.cardIds.push(card.$key);
-      });
+    this.nameSubject = new Subject();
+    this.cardsFirst10 = database.list('/Cards', {
+      query: {
+        orderByChild: 'name',
+        startAt: this.nameSubject,
+        limitToFirst: 3,
+      }
     });
   }
 
-  getCards() {
-    return this.cardIds;
+  filterBy(name: string) {
+    this.nameSubject.next(name);
   }
+
+  getCards() {
+    return this.cardsFirst10;
+  }
+
+
 
   getCardById(cardId: string) {
     return this.database.object('/Cards/' + cardId);

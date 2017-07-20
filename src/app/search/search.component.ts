@@ -9,18 +9,27 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [FirebaseToAppService]
 })
 export class SearchComponent implements OnInit {
-  cards: any[];
+  cards: FirebaseListObservable<any[]>;
 
 
   constructor(private fbaService: FirebaseToAppService) { }
 
   ngOnInit() {
-    this.cards = this.fbaService.getCards();
+    // this.cards = this.fbaService.getCards();
   }
 
   //Form search stuff
   searchForCard(name: string) {
+    console.log("Start");
+    var properString: string = name.replace(/\w\S*/g, ( text => text[0].toUpperCase() + text.substr(1).toLowerCase() ));
+    this.fbaService.filterBy(properString);
+    this.cards = this.fbaService.getCards();
     console.log(this.cards);
+    this.cards.subscribe(data => {
+      data.forEach(card => {
+        console.log(card.name);
+      });
+    });
   }
 
 }
