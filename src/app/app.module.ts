@@ -9,8 +9,10 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
+import { masterAuthConfig } from './api-keys'; //Firebase Auth Config var
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DeckbuilderComponent } from './deckbuilder/deckbuilder.component';
 import { SearchComponent } from './search/search.component';
 import { CardDisplayComponent } from './card-display/card-display.component';
@@ -26,6 +28,13 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
+
+export const authConfig = {
+  apiKey: masterAuthConfig.apiKey,
+  authDomain: masterAuthConfig.authDomain,
+  databaseURL: masterAuthConfig.databaseURL,
+  storageBucket: masterAuthConfig.storageBucket
+}; //Firebase Auth Config ref
 
 @NgModule({
   declarations: [
@@ -53,7 +62,8 @@ export const firebaseConfig = {
     MdCardModule,
     MdToolbarModule,
     MdIconModule,
-    MdGridListModule
+    MdGridListModule,
+    AngularFireAuthModule //imported
   ],
   providers: [],
   bootstrap: [AppComponent]
