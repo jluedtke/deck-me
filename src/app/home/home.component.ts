@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  newUser(email: string, password: string) {
-    this.authService.createUser(email, password);
+  newUser(email: string, password: string, name: string) {
+    this.authService.createUser(email, password, name);
   }
 
   loginUser(email: string, password: string) {

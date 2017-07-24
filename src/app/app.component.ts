@@ -13,6 +13,7 @@ import * as firebase from 'firebase';
 export class AppComponent {
 
   user; //provided by service
+  local;
   private isLoggedIn: boolean;
 
   constructor(public authService: AuthenticationService, public authGaurd: AuthGaurdService, public router: Router) {
@@ -22,6 +23,8 @@ export class AppComponent {
         this.router.navigate(['']);
       } else {
         this.isLoggedIn = true;
+        this.local = this.authService.afAuth.auth.currentUser;
+        console.log(this.local);
       }
     })
   }

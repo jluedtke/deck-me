@@ -1,7 +1,99 @@
-md-grid-list {
-  margin: 20px;
-}
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
 
-md-grid-tile {
-  border: 2px solid red;
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+
+);
+
+.container {
+  @include grid-container;
+
+
+  .side-bar {
+
+    @include grid-container;
+    @include grid-column(2);
+
+    .export-deck {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    }
+    .deck-list {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    }
+
+  }
+
+
+  .main-content {
+    @include grid-column(10);
+
+    .card-search {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    
+    }
+    .card-display {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    }
+    .deck-charts {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    }
+
+  }
+
+
+  // MEDIA QUERIES
+
+  // medium desktop
+  @media only screen and (max-width: 1400px) {
+
+    .side-bar {
+      @include grid-column(3);
+    }
+
+    .main-content{
+      @include grid-column(9);
+
+    }
+
+  }
+  // small desktop
+  @media only screen and (max-width: 1000px) {
+
+    .side-bar {
+      @include grid-column(4);
+    }
+
+    .main-content{
+      @include grid-column(8);
+
+    }
+
+  }
+  // tablet
+  @media only screen and (max-width: 786px) {
+
+    .side-bar {
+      @include grid-column(5);
+    }
+
+    .main-content{
+      @include grid-column(7);
+
+    }
+
+  }
+
 }
