@@ -13,10 +13,23 @@ export class AuthenticationService {
     this.user = afAuth.authState;
   }
 
+  passwordReset(email: string) {
+    this.afAuth.auth.sendPasswordResetEmail(email);
+  }
+
+  updateUsername(name: string, photoURL: string = null) {
+    this.afAuth.auth.currentUser.updateProfile({displayName: name, photoURL: null});
+  }
+
+  updateEmail(email: string) {
+    this.afAuth.auth.currentUser.updateEmail(email);
+  }
+
   createUser(email: string, password: string, name: string) {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(function(stuff) {
         stuff.updateProfile({displayName: name, photoURL: null});
+        stuff.sendEmailVerification();
       })
       .catch(function(error) {
         alert(error.message);

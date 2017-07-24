@@ -1,2 +1,9 @@
 <h1>User Profile</h1>
+
+<input type="text" #changeName>
+<button (click)="updateUser(changeName.value); changeName.value='';">Update Username</button>
+
+<input type="text" #changeEmail>
+<button (click)="updateEmail(changeEmail.value); changeEmail.value='';">Update Email</button>
+
 <app-deck-list></app-deck-list>
