@@ -22,6 +22,7 @@ import { ExportDeckFormComponent } from './export-deck-form/export-deck-form.com
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DeckListComponent } from './deck-list/deck-list.component';
 import { AboutComponent } from './about/about.component';
+import { FilterByTypePipe } from './filter-by-type.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -41,7 +42,8 @@ export const firebaseConfig = {
     ExportDeckFormComponent,
     UserProfileComponent,
     DeckListComponent,
-    AboutComponent
+    AboutComponent,
+    FilterByTypePipe
   ],
   imports: [
     BrowserModule,

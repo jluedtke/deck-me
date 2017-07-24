@@ -14,7 +14,7 @@ import { Card } from '../card.model';
 export class DeckbuilderComponent implements OnInit {
   // styles array
   updatedDeck: Deck;
-  deckToSave: Deck = this.updatedDeck;
+  masterCardsToDisplay: any[];
 
   constructor(private fbaService: FirebaseToAppService) { }
 
@@ -26,15 +26,24 @@ export class DeckbuilderComponent implements OnInit {
 
   addToDeck(cardId: string) {
     this.updatedDeck.cards.push(cardId);
-    // this.deckToSave = this.updatedDeck;
     this.fbaService.updateDeck(this.updatedDeck);
+    this.getCardsToDisplay();
   }
 
   setUpdatedDeck(deck: Deck) {
-    console.log("boop");
     this.updatedDeck = deck;
-    // this.deckToSave = this.updatedDeck;
-    console.log(this.updatedDeck.name);
+    this.getCardsToDisplay();
+  }
+
+  getCardsToDisplay() {
+    this.masterCardsToDisplay =[];
+    if (this.updatedDeck) {
+      for (let i = 0; i < this.updatedDeck.cards.length; i++) {
+        this.fbaService.getCardById(this.updatedDeck.cards[i]).subscribe(data => {
+          this.masterCardsToDisplay.push(data);
+        });
+      }
+    }
   }
 
 }

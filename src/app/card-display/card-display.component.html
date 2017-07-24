@@ -1,3 +1,8 @@
-<p>
-  card-display works!
-</p>
+<div *ngFor="let type of cardTypes">
+  <div class={{type}}>
+    <h3>{{type}}</h3>
+    <div *ngFor="let card of cardsToDisplay | filterByType:type">
+      <p>{{card.name}}</p>
+    </div>
+  </div>
+</div>

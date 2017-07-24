@@ -5,6 +5,6 @@
 <div class="search-card-display">
   <img src="{{(firstInCards)?.imageUrl}}" alt="">
   <ul *ngFor="let card of cards">
-    <li (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (click)="setFirstInCards(card)">{{card.name}}</li>
+    <li (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">{{card.name}}</li>
   </ul>
 </div>

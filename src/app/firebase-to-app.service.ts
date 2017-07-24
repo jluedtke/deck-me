@@ -62,4 +62,8 @@ export class FirebaseToAppService {
     this.cards.update(cardId, newCard);
   }
 
+  getCardById(cardId: string) {
+    return this.database.object('Cards/' + cardId);
+  }
+
 }
