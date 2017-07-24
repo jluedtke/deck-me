@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
 import { masterAuthConfig } from './api-keys'; //Firebase Auth Config var
+import { AuthenticationService } from './authentication.service';
+import { AuthGaurdService } from './auth-gaurd.service'; //AuthGaurdService
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -65,7 +67,7 @@ export const authConfig = {
     MdGridListModule,
     AngularFireAuthModule //imported
   ],
-  providers: [],
+  providers: [ AuthGaurdService, AuthenticationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
