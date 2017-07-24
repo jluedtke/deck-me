@@ -1,22 +1,70 @@
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+);
+
+
+
 .container {
+  @include grid-container;
 
-}
+
+  .welcome {
+    @include grid-column(12);
+    @include size(100% 150px);
+    text-align: center;
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h1, h2 {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+
+  .user-login {
+    @include grid-column(12);
+    @include size(100% 750px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-pannle {
+      @include size(600px);
+      background-color: $dark-gray-color;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px black;
+      padding: 20px;
+
+      h2 {
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        text-align: center;
+      }
+      .new-user {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: $light-gray-color;
+        border-radius: 5px;
+      }
+
+      .old-user {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: $light-gray-color;
+        border-radius: 5px;
+      }
 
 
-md-grid-tile {
+    }
+  }
 
-}
-
-.test {
-  text-align: center;
-
-}
-
-.test > h1, h3 {
-  color: white;
-  text-shadow: 1px 1px 1px black;
-}
-
-h1 {
-  font-size: 48px;
 }
