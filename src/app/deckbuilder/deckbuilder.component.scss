@@ -17,12 +17,12 @@ $neat-grid: (
     @include grid-container;
     @include grid-column(2);
 
-    .box1 {
+    .export-deck {
       @include grid-column(12);
       @include size(100% 500px);
       border: 2px solid red;
     }
-    .box2 {
+    .deck-list {
       @include grid-column(12);
       @include size(100% 500px);
       border: 2px solid red;
@@ -34,17 +34,18 @@ $neat-grid: (
   .main-content {
     @include grid-column(10);
 
-    .box3 {
+    .card-search {
+      @include grid-column(12);
+      @include size(100% 500px);
+      border: 2px solid red;
+    
+    }
+    .card-display {
       @include grid-column(12);
       @include size(100% 500px);
       border: 2px solid red;
     }
-    .box4 {
-      @include grid-column(12);
-      @include size(100% 500px);
-      border: 2px solid red;
-    }
-    .box5 {
+    .deck-charts {
       @include grid-column(12);
       @include size(100% 500px);
       border: 2px solid red;

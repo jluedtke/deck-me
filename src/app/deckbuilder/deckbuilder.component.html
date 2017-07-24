@@ -1,25 +1,25 @@
 <div class="container">
   <div class="side-bar">
 
-    <div class="box1">
-      export deck
+    <div class="export-deck">
+      <app-export-deck-form [childDeckToSave]="updatedDeck"></app-export-deck-form>
     </div>
-    <div class="box2">
-      deck list
+    <div class="deck-list">
+      <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
     </div>
-    
+
   </div>
 
   <div class="main-content">
 
-    <div class="box3">
-      card search
+    <div class="card-search">
+        <app-search (clickSender)="addToDeck($event)"></app-search>
     </div>
-    <div class="box4">
-      card display
+    <div class="card-display">
+        <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
     </div>
-    <div class="box5">
-      charts
+    <div class="deck-charts">
+      <app-deck-chart></app-deck-chart>
     </div>
 
   </div>

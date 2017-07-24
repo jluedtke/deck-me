@@ -1,10 +1,23 @@
-<label>Card Name</label>
-<input type="text" #cardName (keypress)="searchForCard(cardName.value)">
-<!-- <button (click)="searchForCard(cardName.value)">Search</button> -->
+<div class="container">
 
-<div class="search-card-display">
-  <img src="{{(firstInCards)?.imageUrl}}" alt="">
-  <ul *ngFor="let card of cards">
-    <li (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">{{card.name}}</li>
-  </ul>
+  <div class="search-input">
+
+    <!-- <label>Card Name</label> -->
+    <md-input-container color="warn">
+      <input class="test" mdInput type="text" #cardName (keypress)="searchForCard(cardName.value)" placeholder="Search a Card">
+    </md-input-container>
+  </div>
+
+  <div class="search-output">
+
+
+      <img src="{{(firstInCards)?.imageUrl}}" alt="">
+      <ul *ngFor="let card of cards">
+        <li (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">{{card.name}}</li>
+      </ul>
+
+
+  </div>
+
+
 </div>
