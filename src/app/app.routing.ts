@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGaurdService } from './auth-gaurd.service';
 import { HomeComponent } from './home/home.component';
 import { DeckbuilderComponent } from './deckbuilder/deckbuilder.component';
 import { SearchComponent } from './search/search.component';
@@ -19,17 +20,22 @@ const appRoutes: Routes = [
   },
   {
     path: 'deckbuilder',
-    component: DeckbuilderComponent
+    component: DeckbuilderComponent,
+    canActivate: [ AuthGaurdService ]
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [ AuthGaurdService ]
   },
   {
     path: 'profile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    canActivate: [ AuthGaurdService ]
   },
 
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+
+export const appRoutingProviders: any[] = [];

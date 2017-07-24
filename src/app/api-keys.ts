@@ -12,6 +12,6 @@ export var masterAuthConfig = {
   authDomain: "deckmeauth.firebaseapp.com",
   databaseURL: "https://deckmeauth.firebaseio.com",
   projectId: "deckmeauth",
-  storageBucket: "",
+  storageBucket: "deckmeauth.appspot.com",
   messagingSenderId: "326450392870"
 }

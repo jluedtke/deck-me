@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service'; //import service
 import { AuthGaurdService } from './auth-gaurd.service';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -33,21 +34,4 @@ export class AppComponent {
   logout() {
     this.authService.logout();
   }
-
-  gotoHome() {
-    this.router.navigate(['']);
-  }
-
-  gotoDeckBuilder() {
-    this.router.navigate(['deckbuilder']);
-  }
-
-  gotoAbout() {
-    this.router.navigate(['about']);
-  }
-  gotoProfile() {
-    this.router.navigate(['profile']);
-  }
-
-
 }

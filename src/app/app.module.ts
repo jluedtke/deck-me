@@ -14,7 +14,7 @@ import { AuthenticationService } from './authentication.service';
 import { AuthGaurdService } from './auth-gaurd.service'; //AuthGaurdService
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth'; //authmod
 import { DeckbuilderComponent } from './deckbuilder/deckbuilder.component';
 import { SearchComponent } from './search/search.component';
 import { CardDisplayComponent } from './card-display/card-display.component';
@@ -56,7 +56,7 @@ export const authConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig), //change for auth instance
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MdButtonModule,

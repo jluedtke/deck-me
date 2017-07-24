@@ -5,10 +5,10 @@
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
   </md-toolbar>
   <md-menu #appMenu="mdMenu" id="dropDown">
-    <button md-menu-item (click)="gotoHome()">Home</button>
-    <button md-menu-item (click)="gotoDeckBuilder()">Deck Builder</button>
-    <button md-menu-item (click)="gotoAbout()">About</button>
-    <button md-menu-item (click)="gotoProfile()">Profile</button>
+    <button md-menu-item routerLink="">Home</button>
+    <button md-menu-item routerLink="deckbuilder">Deck Builder</button>
+    <button md-menu-item routerLink="about">About</button>
+    <button md-menu-item routerLink="profile">Profile</button>
     <div *ngIf="!isLoggedIn">
       <button (click)="login()">Login</button>
     </div>
