@@ -29,9 +29,7 @@ export class AuthenticationService {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(function(stuff) {
         stuff.updateProfile({displayName: name, photoURL: null});
-      })
-      .then(function(otherStuff) {
-        otherStuff.sendEmailVerification();
+        stuff.sendEmailVerification();
       })
       .catch(function(error) {
         alert(error.message);
