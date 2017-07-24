@@ -14,7 +14,7 @@ export class FilterByTypePipe implements PipeTransform {
 
     if (cardType === "Creature") {
       for (let i = 0; i < input.length; i++) {
-        if (input[i].types[0] == cardType) {
+        if (input[i].types[0] == cardType || input[i].types[1] == cardType) {
           output.push(input[i]);
         }
       }
@@ -28,7 +28,7 @@ export class FilterByTypePipe implements PipeTransform {
     }
     else if (cardType === "Enchantment") {
       for (let i = 0; i < input.length; i++) {
-        if (input[i].types[0] == cardType) {
+        if (input[i].types[0] == cardType && input[i].types[1] != "Creature") {
           output.push(input[i]);
         }
       }
