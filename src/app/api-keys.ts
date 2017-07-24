@@ -6,12 +6,3 @@ export var masterFirebaseConfig = {
   storageBucket: "deckme-5a084.appspot.com",
   messagingSenderId: "405642849095"
 }
-
-export var masterAuthConfig = {
-  apiKey: "AIzaSyASBR6yAZ_Y3zFsXFhx6Rgcg_LhwCyYdOA",
-  authDomain: "deckmeauth.firebaseapp.com",
-  databaseURL: "https://deckmeauth.firebaseio.com",
-  projectId: "deckmeauth",
-  storageBucket: "deckmeauth.appspot.com",
-  messagingSenderId: "326450392870"
-}

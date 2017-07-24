@@ -9,6 +9,15 @@
   <div class="test">
     <h1>Welcome To DeckMe</h1>
     <h3>A simple Magic The Gathering Deck building Application</h3>
+    <small>New User</small>
+    <input type="text" placeholder="Email" #newEmail>
+    <input type="password" placeholder="Password" #newPassword>
+    <button (click)="newUser(newEmail.value, newPassword.value); newEmail.value=''; newPassword.value='';">Create New User</button>
+    <br>
+    <small>Login</small>
+    <input type="text" placeholder="Email" #loginEmail>
+    <input type="password" placeholder="Password" #loginPassword>
+    <button (click)="loginUser(loginEmail.value, loginPassword.value); loginEmail.value=''; loginPassword.value='';">Login</button>
   </div>
   </md-grid-tile>
 </md-grid-list>
