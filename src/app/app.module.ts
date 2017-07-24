@@ -9,7 +9,6 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
-import { masterAuthConfig } from './api-keys'; //Firebase Auth Config var
 import { AuthenticationService } from './authentication.service';
 import { AuthGaurdService } from './auth-gaurd.service'; //AuthGaurdService
 import { AngularFireModule } from 'angularfire2';
@@ -30,13 +29,6 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
-
-export const authConfig = {
-  apiKey: masterAuthConfig.apiKey,
-  authDomain: masterAuthConfig.authDomain,
-  databaseURL: masterAuthConfig.databaseURL,
-  storageBucket: masterAuthConfig.storageBucket
-}; //Firebase Auth Config ref
 
 @NgModule({
   declarations: [

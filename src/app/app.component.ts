@@ -13,8 +13,8 @@ import * as firebase from 'firebase';
 export class AppComponent {
 
   user; //provided by service
+  current;
   private isLoggedIn: boolean;
-  private userName: string;
 
   constructor(public authService: AuthenticationService, public authGaurd: AuthGaurdService, public router: Router) {
     this.authService.user.subscribe(user => {
@@ -22,13 +22,8 @@ export class AppComponent {
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
-        this.userName = user.displayName;
       }
     })
-  }
-
-  login() {
-    this.authService.login();
   }
 
   logout() {
