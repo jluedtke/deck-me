@@ -13,13 +13,13 @@ import * as firebase from 'firebase';
 export class AppComponent {
 
   user; //provided by service
-  current;
   private isLoggedIn: boolean;
 
   constructor(public authService: AuthenticationService, public authGaurd: AuthGaurdService, public router: Router) {
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
+        this.router.navigate(['']);
       } else {
         this.isLoggedIn = true;
       }
