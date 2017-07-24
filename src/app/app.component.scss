@@ -1,19 +1,18 @@
-$titleFont: 'Anton', sans-serif;
-
-
+@import "/../assets/var.scss";
 
 .toolbar-spacer {
   flex: 1 1 auto;
 }
 
 md-toolbar {
-  background-color: #463911;
+  background-color: $brown-color;
   color: white;
   text-shadow: 1px 1px 1px black;
   border-radius: 3px;
   height: 100px;
   display: flex;
   justify-content: center;
+  box-shadow: 2px 2px 2px black;
 }
 
 #logo {
@@ -42,4 +41,5 @@ md-icon {
 
 footer {
   font-family:  $titleFont;
+  box-shadow: 2px 2px 2px black;
 }
