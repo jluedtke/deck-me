@@ -10,6 +10,10 @@
       <div class="new-user">
           New User:
         <md-input-container>
+          <input mdInput type="text" placeholder="Username" #newUsername> <!-- JOE!! NEW INPUT !-->
+        </md-input-container>
+
+        <md-input-container>
           <input mdInput type="text" placeholder="Email" #newEmail>
         </md-input-container>
 
@@ -17,7 +21,7 @@
           <input mdInput type="password" placeholder="Password" #newPassword>
         </md-input-container>
 
-          <button md-raised-button (click)="newUser(newEmail.value, newPassword.value); newEmail.value=''; newPassword.value='';">Create New User</button>
+          <button md-raised-button (click)="newUser(newEmail.value, newPassword.value, newUsername.value); newEmail.value=''; newPassword.value=''; newUsername.value='';">Create New User</button>
       </div>
       <h2>Already Have an account?</h2>
       <div class="old-user">

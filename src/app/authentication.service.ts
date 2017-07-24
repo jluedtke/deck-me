@@ -2,29 +2,32 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable'; //used for user instance
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app'; //access to firebase
-import { User } from './user.model';
 
 @Injectable()
 export class AuthenticationService {
 
   user: Observable<firebase.User>; //current logged-in user
-  localUser: Object;
+  local: Object;
 
   constructor(public afAuth: AngularFireAuth) {
     this.user = afAuth.authState;
   }
 
-  createUser(email: string, password: string) {
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
-      alert(error.message);
-    })
+  createUser(email: string, password: string, name: string) {
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then(function(stuff) {
+        stuff.updateProfile({displayName: name, photoURL: null});
+      })
+      .catch(function(error) {
+        alert(error.message);
+      })
   }
 
   loginUser(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).catch(function(error) {
       alert(error.message);
     })
-    this.localUser = this.afAuth.auth.currentUser;
+    this.local = this.afAuth.auth.currentUser;
   }
 
   logout() {
