@@ -3,7 +3,6 @@
       <span id="logo" routerLink=''>DeckMe</span>
       <span class="toolbar-spacer"></span>
       <div *ngIf="isLoggedIn">
-        <span><small>{{current["email"]}}</small></span> <!--ADD CONDI TO DISPLAY LOGIN ICON, NAME !-->
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
   </md-toolbar>
