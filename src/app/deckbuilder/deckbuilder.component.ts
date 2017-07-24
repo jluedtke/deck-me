@@ -13,7 +13,6 @@ import { Card } from '../card.model';
 })
 export class DeckbuilderComponent implements OnInit {
   // styles array
-
   updatedDeck: Deck;
   deckToSave: Deck = this.updatedDeck;
 
@@ -27,12 +26,14 @@ export class DeckbuilderComponent implements OnInit {
 
   addToDeck(cardId: string) {
     this.updatedDeck.cards.push(cardId);
-    this.deckToSave = this.updatedDeck;
+    // this.deckToSave = this.updatedDeck;
     this.fbaService.updateDeck(this.updatedDeck);
   }
 
   setUpdatedDeck(deck: Deck) {
+    console.log("boop");
     this.updatedDeck = deck;
+    // this.deckToSave = this.updatedDeck;
     console.log(this.updatedDeck.name);
   }
 

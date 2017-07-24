@@ -38,7 +38,6 @@ export class FirebaseToAppService {
         cards: deck.cards,
         name: deck.name
       });
-
     }
   }
 

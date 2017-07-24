@@ -27,4 +27,9 @@ export class DeckListComponent implements OnInit {
     this.clickSender.emit(deck);
   }
 
+  createNewDeck() {
+    var newDeck = new Deck([], "wNxVre4mWe");
+    this.clickSender.emit(newDeck);
+  }
+
 }

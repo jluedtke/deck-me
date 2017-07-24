@@ -13,6 +13,7 @@ import { Card } from '../card.model';
 })
 export class ExportDeckFormComponent implements OnInit {
   @Input() childDeckToSave: Deck;
+  @Input() childTempDeck: Deck;
 
 
   constructor(private fbaService: FirebaseToAppService) { }
@@ -22,8 +23,11 @@ export class ExportDeckFormComponent implements OnInit {
 
   submitForm(deckName: string) {
     var newDeck = new Deck(this.childDeckToSave.cards, deckName);
-    this.fbaService.createDeck(newDeck);
+    this.fbaService.updateDeck(newDeck);
   }
 
-  //NOTE: fix placeholder name stuff, blah blah blah my brain hurts
+  submitUpdateForm(deckName: string) {
+    this.childDeckToSave.name = deckName;
+    this.fbaService.updateDeck(this.childDeckToSave);
+  }
 }

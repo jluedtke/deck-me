@@ -1,12 +1,13 @@
-<h3>Save Deck</h3>
-
-<form *ngIf="childDeckToSave">
-  <label>Deck Name: </label>
-  <input #deckName placeholder={{childDeckToSave.name}}>
-  <button type="submit" (click)="submitForm(deckName.value); deckName.value = '';"></button>
-</form>
-<form *ngIf="!childDeckToSave">
+<form *ngIf="!childDeckToSave || childDeckToSave.name == 'wNxVre4mWe'">
+  <h3>Save New Deck</h3>
   <label>Deck Name: </label>
   <input #deckName>
-  <button type="submit" (click)="submitForm(deckName.value); deckName.value = '';"></button>
+  <button type="submit" (click)="submitForm(deckName.value)">Save</button>
+</form>
+
+<form *ngIf="childDeckToSave && childDeckToSave.name != 'wNxVre4mWe'">
+  <h3>Update Deck</h3>
+  <label>Deck Name: </label>
+  <input #deckName value={{childDeckToSave.name}}>
+  <button type="submit" (click)="submitUpdateForm(deckName.value);">Save</button>
 </form>
