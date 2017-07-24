@@ -15,7 +15,7 @@ $neat-grid: (
 
   .welcome {
     @include grid-column(12);
-    @include size(100% 150px);
+    @include size(100% 200px);
     text-align: center;
 
     h1 {
@@ -30,17 +30,18 @@ $neat-grid: (
 
   .user-login {
     @include grid-column(12);
-    @include size(100% 750px);
+    @include size(100% 800px);
     display: flex;
     justify-content: center;
     align-items: center;
 
     .login-pannle {
-      @include size(600px);
+      @include size(700px);
       background-color: $dark-gray-color;
       border-radius: 5px;
       box-shadow: 2px 2px 2px black;
       padding: 20px;
+
 
       h2 {
         color: white;
@@ -48,6 +49,7 @@ $neat-grid: (
         text-align: center;
       }
       .new-user {
+        // @include size(500px 250px);
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -56,6 +58,8 @@ $neat-grid: (
       }
 
       .old-user {
+        // @include size(500px 250px);
+
         display: flex;
         flex-direction: column;
         padding: 20px;

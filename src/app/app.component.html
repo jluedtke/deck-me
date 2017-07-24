@@ -2,7 +2,7 @@
   <md-toolbar>
       <span id="logo" routerLink=''>DeckMe</span>
       <span class="toolbar-spacer"></span>
-      <div *ngIf="isLoggedIn">
+      <div class="user-name" *ngIf="isLoggedIn">
         <span>{{local.displayName}}</span> <!--ADD CONDI TO DISPLAY LOGIN ICON, NAME !-->
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
@@ -13,7 +13,7 @@
     <button md-menu-item routerLink="about">About</button>
     <button md-menu-item routerLink="profile">Profile</button>
     <div *ngIf="isLoggedIn">
-      <button (click)="logout()">Logout</button>
+      <button md-menu-item (click)="logout()">Logout</button>
     </div>
   </md-menu>
 </header>

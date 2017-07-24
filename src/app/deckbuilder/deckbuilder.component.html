@@ -1,28 +1,70 @@
+<div class="container">
+  <div class="side-bar">
+
+    <div class="export-deck">
+      <app-export-deck-form [childDeckToSave]="updatedDeck"></app-export-deck-form>
+    </div>
+    <div class="deck-list">
+      <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
+    </div>
+
+  </div>
+
+  <div class="main-content">
+
+    <div class="card-search">
+        <app-search (clickSender)="addToDeck($event)"></app-search>
+    </div>
+    <div class="card-display">
+        <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
+    </div>
+    <div class="deck-charts">
+      <app-deck-chart></app-deck-chart>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- GRID START -->
-<md-grid-list cols="4" rowHeight="500px" gutterSize='20px'>
-  <!-- TILE #1 -->
+<!-- <md-grid-list cols="4" rowHeight="500px" gutterSize='20px'>
+
   <md-grid-tile colspan='1' rowspan='3'>
     <div class="export-deck">
       <app-export-deck-form [childDeckToSave]="updatedDeck"></app-export-deck-form>
     </div>
   </md-grid-tile>
-  <!-- TILE #2 -->
+
   <md-grid-tile colspan='3' rowspan='1'>
     <div class="deck-list">
       <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
     </div>
     <app-search (clickSender)="addToDeck($event)"></app-search>
   </md-grid-tile>
-  <!-- TILE #3 -->
+
   <md-grid-tile colspan='3' rowspan='1'>
     <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
   </md-grid-tile>
-  <!-- TILE #4 -->
+
   <md-grid-tile colspan='3' rowspan='1'>
     <app-deck-chart></app-deck-chart>
   </md-grid-tile>
 
-</md-grid-list>
+</md-grid-list> -->
 <!-- GRID END -->
 <!-- !ADRIAN! - implement canActivateChild for these child comps !-->
 <!-- Keep it groovy -->
