@@ -1,4 +1,4 @@
-<form *ngIf="!childDeckToSave || childDeckToSave.name == 'wNxVre4mWe'">
+<!-- <form *ngIf="!childDeckToSave || childDeckToSave.name == 'wNxVre4mWe'">
   <h3>Save New Deck</h3>
   <label>Deck Name: </label>
   <input #deckName>
@@ -10,4 +10,37 @@
   <label>Deck Name: </label>
   <input #deckName value={{childDeckToSave.name}}>
   <button type="submit" (click)="submitUpdateForm(deckName.value);">Save</button>
-</form>
+</form> -->
+
+<md-card color="accent"
+*ngIf="!childDeckToSave || childDeckToSave.name == 'wNxVre4mWe'"
+>
+  <md-card-header>
+    <md-card-title>Update Deck</md-card-title>
+    <i class="material-icons">build</i>
+  </md-card-header>
+
+  <md-card-content>
+    <md-input-container color="accent">
+      <input mdInput #deckName placeholder="Deck Name">
+    </md-input-container>
+    <button md-raised-button color="primary" type="submit" (click)="submitForm(deckName.value)">Save</button>
+  </md-card-content>
+
+</md-card>
+
+<md-card color="accent"
+*ngIf="childDeckToSave && childDeckToSave.name != 'wNxVre4mWe'"
+>
+  <md-card-header>
+    <md-card-title>Update Deck<i class="material-icons">build</i></md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <md-input-container color="accent">
+      <input mdInput #deckName placeholder="Deck Name" value={{childDeckToSave.name}}>
+    </md-input-container>
+      <button md-raised-button color="primary" type="submit" (click)="submitUpdateForm(deckName.value);">Save</button>
+  </md-card-content>
+
+</md-card>
