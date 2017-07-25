@@ -20,5 +20,6 @@ export class Card {
     public imageUrl: string,
     public multiverseid: number,
     public legalities: any[], //[{format, legality}, {format, legality}]
+    public count: number
   ) {}
 }

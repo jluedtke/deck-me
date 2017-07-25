@@ -154,7 +154,8 @@ export class SearchComponent {
       cardLayout,
       cardImageUrl,
       cardMultiverseID,
-      cardLegalities
+      cardLegalities,
+      0
     )
     console.log("Added");
     this.fbaService.addCard(foundCard);
