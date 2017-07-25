@@ -35,12 +35,14 @@ export class AuthenticationService {
   }
 
   createUser(email: string, password: string, name: string) {
+    let router: Router = this.router;
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(stuff => {
         stuff.updateProfile({displayName: name, photoURL: null});
         stuff.sendEmailVerification();
+        router.navigate(['deckbuilder']);
       })
-      .catch(function(error) {
+      .catch(error => {
         alert(error.message);
       })
   }
@@ -51,15 +53,14 @@ export class AuthenticationService {
       .then(function() {
         router.navigate(['deckbuilder']);
       })
-      .catch(function(error) {
+      .catch(error => {
         alert(error.message);
       })
     this.local = this.afAuth.auth.currentUser;
-    // this.router.navigate(['deckbuilder']);
   }
 
   logout() {
-    this.afAuth.auth.signOut().catch(function(error) {
+    this.afAuth.auth.signOut().catch(error => {
       alert(error.message);
     })
   }
