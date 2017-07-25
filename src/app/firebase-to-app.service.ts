@@ -2,17 +2,27 @@ import { Injectable } from '@angular/core';
 import { Deck } from './deck.model';
 import { Http, Response } from '@angular/http';
 import { Card } from './card.model';
+import { User } from './user.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AuthenticationService } from './authentication.service';
+
 
 @Injectable()
 export class FirebaseToAppService {
   decks: FirebaseListObservable<any[]>;
   cards: FirebaseListObservable<any[]>;
+  users: FirebaseListObservable<any[]>;
   deckToUpdate: FirebaseListObservable<any[]>;
   cardName: string;
 
-  constructor(private database: AngularFireDatabase, private http: Http) {
-    this.decks = this.database.list('Decks');
+  constructor(private database: AngularFireDatabase, private http: Http, private authService: AuthenticationService) {
+    this.decks = this.database.list('Decks', {
+      query: {
+        orderByChild: 'uid',
+        equalTo: this.authService.afAuth.auth.currentUser.uid
+      }
+    });
+    this.users = this.database.list('Users');
     this.database.list('Decks').remove("wNxVre4mWe");
     this.cards = this.database.list('Cards');
   }
@@ -64,6 +74,10 @@ export class FirebaseToAppService {
 
   getCardById(cardId: string) {
     return this.database.object('Cards/' + cardId);
+  }
+
+  createUser(user: User) {
+    this.users.push(user);
   }
 
 }

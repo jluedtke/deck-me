@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AuthenticationService } from './authentication.service';
+import { FirebaseToAppService } from './firebase-to-app.service';
 import { AuthGaurdService } from './auth-gaurd.service'; //AuthGaurdService
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -62,7 +63,7 @@ export const firebaseConfig = {
     MdChipsModule,
     AngularFireAuthModule //imported
   ],
-  providers: [ AuthGaurdService, AuthenticationService ],
+  providers: [ AuthGaurdService, AuthenticationService, FirebaseToAppService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
