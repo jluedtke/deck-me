@@ -36,6 +36,10 @@
 
         <button md-raised-button (click)="loginUser(loginEmail.value, loginPassword.value); loginEmail.value=''; loginPassword.value='';">Login</button>
 
+        <small>Forgot Password?</small>
+        <input type="text" #resetPEmail placeholder="Email">
+        <button (click)="sendResetPEmail(resetPEmail.value); resetPEmail.value='';">Send Reset Email</button>
+
       </div>
 
 
