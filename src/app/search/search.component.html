@@ -1,23 +1,28 @@
-<div class="container">
-
-  <div class="search-input">
-
-    <!-- <label>Card Name</label> -->
-    <md-input-container color="warn">
-      <input class="test" mdInput type="text" #cardName (keypress)="searchForCard(cardName.value)" placeholder="Search a Card">
-    </md-input-container>
-  </div>
-
+<!-- <div class="container">
+    <div class="search-input">
+      <md-input-container color="prmary">
+        <input class="test" mdInput type="text" #cardName (keypress)="searchForCard(cardName.value)" placeholder="Search a Card">
+      </md-input-container>
+    </div>
   <div class="search-output">
-
-
       <img src="{{(firstInCards)?.imageUrl}}" alt="">
+      <div class="search-results">
+        <md-chip-list class="mat-chip-list-stacked">
+          <md-chip *ngFor="let card of cards"
+              selected="true"
+              color="accent"
+              (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">
+              {{card.name}}
+          </md-chip>
+        </md-chip-list>
+      </div>
       <ul *ngFor="let card of cards">
         <li (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">{{card.name}}</li>
       </ul>
-
-
   </div>
+</div> -->
 
+<md-card id="search-card" color="primary"
+>
 
-</div>
+</md-card>
