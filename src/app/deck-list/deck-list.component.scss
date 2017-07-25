@@ -1,3 +1,96 @@
 @import "../../assets/bourbon/bourbon";
 @import "../../assets/neat/neat";
 @import "../../assets/var.scss";
+
+md-card {
+  height: 400px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+
+  md-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    md-card-title {
+      margin-top: 15px;
+      text-shadow: 1px 1px 1px black;
+    }
+
+  }
+
+
+  md-card-content {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    // border: 2px solid red;
+    md-chip-list {
+      width: 150px;
+      text-align: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      md-chip{
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+    button {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  md-card {
+    height: 100px;
+    width: 750px;
+
+    md-card-header {
+      justify-content: center;
+    }
+    md-card-content {
+      height: 70px;
+      flex-direction: row;
+      justify-content: center;
+
+      md-input-container {
+        width: 300px;
+      }
+
+      button {
+        margin-left: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 855px) {
+  md-card {
+    width: 600px;
+
+    md-card-content {
+      button {
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 786px) {
+  md-card {
+    width: 550px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  md-card {
+    width: 450px;
+  }
+}

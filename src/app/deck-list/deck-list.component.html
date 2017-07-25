@@ -1,11 +1,37 @@
-<h3>User Decks</h3>
+<!-- <h3>User Decks</h3> -->
 
 <!-- decks from Firebase should be decks from user from firebase -->
-<div *ngIf="decksFromFirebase">
+<!-- <div *ngIf="decksFromFirebase">
+
   <ul *ngFor="let deck of decksFromFirebase">
     <li *ngIf="deck.name != 'wNxVre4mWe'"><a (click)="updateDeckClicked(deck)">{{deck.name}}</a></li>
   </ul>
+
 </div>
 
 
 <button type="button" (click)=createNewDeck()>Create New Deck</button>
+ -->
+
+<md-card color="accent"
+*ngIf="decksFromFirebase"
+>
+  <md-card-header>
+    <md-card-title>Deck list:</md-card-title>
+    <i class="material-icons">list</i>
+  </md-card-header>
+
+  <md-card-content>
+    <md-chip-list class="mat-chip-list-stacked" *ngFor="let deck of decksFromFirebase">
+      <md-chip
+          selected="true"
+          color="primary"
+          *ngIf="deck.name != 'wNxVre4mWe'"
+          (click)="updateDeckClicked(deck)">
+            {{deck.name}}
+      </md-chip>
+    </md-chip-list>
+    <button md-raised-button color="primary" type="button" (click)=createNewDeck()>New Deck</button>
+  </md-card-content>
+
+</md-card>

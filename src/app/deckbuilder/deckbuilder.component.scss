@@ -10,7 +10,7 @@ $neat-grid: (
 
 .container {
   @include grid-container;
-  border: 2px solid black;
+  // border: 2px solid black;
   .top-bar {
     @include grid-column(12);
     @include size(100% 550px);
@@ -25,14 +25,14 @@ $neat-grid: (
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid orange;
+      // border: 2px solid orange;
       order: 1;
     }
     .card-search {
       @include grid-column(6);
       @include size(60% 500px);
       // @include size(100% 300px);
-      border: 2px solid red;
+      // border: 2px solid red;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -44,7 +44,10 @@ $neat-grid: (
       @include grid-column(3);
       @include size(18% 500px);
       // @include size(100% 100px);
-      border: 2px solid blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // border: 2px solid blue;
       order: 1;
     }
   }
