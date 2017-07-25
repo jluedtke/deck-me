@@ -8,49 +8,121 @@ $neat-grid: (
 
 );
 
-.container {
-  // margin-top: 25px;
-  @include grid-container;
-  // @include size(90% 450px);
-  // box-shadow: 2px 2px 2px black;
-  // border-radius: 5px;
-  // margin-top: 25px;
-  // margin-left: 5%;
-  // background-color: $brown-color;
-  .search-input {
-    // @include size(100% 80px);
-    // @include grid-column(12);
-    // border: 2px solid white;
-    md-input-container {
-      // @include size(90% 50px);
-      // background-color: $light-gray-color;
-      // margin-top: 15px;
-      // margin-left: 5%;
-      // border-radius: 5px;
-      // border: 4px solid $dark-gray-color;
+  md-card {
+  @include size(650px 400px);
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+    md-card-header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      md-card-title {
+        font-size: 24px;
+        text-decoration: underline;
+        text-shadow: 1px 1px 1px black;
+        margin-top: 15px;
+        margin-right: 15px;
+        flex-wrap: nowrap;
+      }
+
+      md-input-container {
+        width: 400px;
+      }
+    }
+
+    md-card-content {
+      @include size(600px 350px);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        border-radius: 15px;
+      }
+
+      md-chip {
+        width: 200px;
+        text-align: center;
+        margin-left: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
     }
   }
-  .search-output {
-    // @include size(100% 360px);
-    // @include grid-column(12);
-    // border: 2px solid white;
-    // display: flex;
-    // justify-content: center;
-    img {
-      // border: 4px solid black;
-      // border-radius: 5px;
-    }
-    md-chip {
-      // width: 300px;
-      // text-align: center;
+
+
+
+  @media only screen and (max-width: 1250px) {
+    md-card {
+    @include size(550px 325px);
+
+      md-card-header {
+        md-card-title {
+          font-size: 20px;
+        }
+      }
+
+      md-card-content {
+        @include size(500px 250px);
+
+        img {
+          @include size(150px 225px);
+        }
+
+        md-chip {
+          width: 150px;
+          height: 10px;
+        }
+      }
     }
   }
-}
+  // BREAKPOINTS
+  @media only screen and (max-width: 1100px) {
+    md-card {
+    @include size(750px 225px);
 
+      md-card-content {
+        @include size(500px 250px);
+        margin-top: 15px;
 
-#search-card {
-  // @include size(400px 400px);
-  // display: flex;
-  // justify-content: center;
-}
+        img {
+          @include size(125px 200px);
+        }
+
+        md-chip {
+          width: 200px;
+        }
+
+      }
+    }
+  }
+    @media only screen and (max-width: 855px) {
+      md-card {
+        @include size(600px 225px);
+      }
+    }
+    @media only screen and (max-width: 786px) {
+      md-card {
+        @include size(550px 225px);
+      }
+    }
+    @media only screen and (max-width: 650px) {
+      md-card {
+        @include size(450px 225px);
+        md-card-header {
+          md-card-title {
+            display: none;
+          }
+        }
+      }
+    }
