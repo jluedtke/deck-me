@@ -3,13 +3,15 @@ import { FirebaseToAppService } from '../firebase-to-app.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Deck } from '../deck.model';
 import { Card } from '../card.model';
+import { AuthenticationService } from '../authentication.service';
+
 
 
 @Component({
   selector: 'app-deckbuilder',
   templateUrl: './deckbuilder.component.html',
   styleUrls: ['./deckbuilder.component.scss'],
-  providers: [FirebaseToAppService]
+  providers: [FirebaseToAppService, AuthenticationService]
 })
 export class DeckbuilderComponent implements OnInit {
   // styles array
@@ -18,11 +20,11 @@ export class DeckbuilderComponent implements OnInit {
   otherCards: any[];
   outputCounts: any[];
 
-  constructor(private fbaService: FirebaseToAppService) { }
+  constructor(private fbaService: FirebaseToAppService, private authService: AuthenticationService) { }
 
   ngOnInit() {
     if (this.updatedDeck == null) {
-      this.updatedDeck = new Deck([], "wNxVre4mWe");
+      this.updatedDeck = new Deck([], "wNxVre4mWe", this.authService.afAuth.auth.currentUser.uid);
     }
   }
 

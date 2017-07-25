@@ -1,7 +1,6 @@
 export class User {
+  public decks: string[] = [];
   constructor(
-    public name: string,
-    public email: string,
     public uid: string
   ) { }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service'; //import service
+import { FirebaseToAppService } from './firebase-to-app.service'; //import service
 import { AuthGaurdService } from './auth-gaurd.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
@@ -8,7 +9,7 @@ import * as firebase from 'firebase';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ AuthenticationService ]
+  providers: [ AuthenticationService, FirebaseToAppService ]
 })
 export class AppComponent {
 

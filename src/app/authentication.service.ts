@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable'; //used for user instance
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app'; //access to firebase
+import { User } from './user.model';
+import { FirebaseToAppService } from './firebase-to-app.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -34,7 +36,7 @@ export class AuthenticationService {
 
   createUser(email: string, password: string, name: string) {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then(function(stuff) {
+      .then(stuff => {
         stuff.updateProfile({displayName: name, photoURL: null});
         stuff.sendEmailVerification();
       })
