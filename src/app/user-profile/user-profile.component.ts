@@ -21,4 +21,8 @@ export class UserProfileComponent implements OnInit {
   updateEmail(update: string) {
     this.authService.updateEmail(update);
   }
+
+  passwordReset() {
+    this.authService.passwordReset();
+  }
 }
