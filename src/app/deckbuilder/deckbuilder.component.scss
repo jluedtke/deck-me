@@ -15,7 +15,6 @@ $neat-grid: (
     @include grid-column(12);
     @include size(100% 550px);
     @include grid-container;
-    border: 2px solid yellow;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -23,7 +22,9 @@ $neat-grid: (
     .export-deck {
       @include grid-column(3);
       @include size(18% 500px);
-      // @include size(100% 100px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 2px solid orange;
       order: 1;
     }
@@ -62,29 +63,22 @@ $neat-grid: (
   }
   @media only screen and (max-width: 1100px) {
     .top-bar {
-
+      @include size(100% 700px);
       flex-direction: column;
       .export-deck {
         @include grid-column(12);
-        @include size(100% 100px);
-
+        @include size(100% 150px);
       }
       .card-search {
         @include grid-column(12);
-        @include size(100% 300px);
+        @include size(100% 350px);
         order: 2;
-
-
       }
       .deck-list {
         @include grid-column(12);
-        @include size(100% 100px);
-
-
+        @include size(100% 150px);
       }
     }
-
-
   }
 }
 // BREAK POINTS:
