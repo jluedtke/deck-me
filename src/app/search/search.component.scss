@@ -11,45 +11,46 @@ $neat-grid: (
 .container {
   // margin-top: 25px;
   @include grid-container;
-  @include size(90% 450px);
-  box-shadow: 2px 2px 2px black;
-  border-radius: 5px;
-  margin-top: 25px;
-  margin-left: 5%;
-  background-color: $brown-color;
-
-
+  // @include size(90% 450px);
+  // box-shadow: 2px 2px 2px black;
+  // border-radius: 5px;
+  // margin-top: 25px;
+  // margin-left: 5%;
+  // background-color: $brown-color;
   .search-input {
-    @include size(100% 80px);
-    @include grid-column(12);
-    border: 2px solid white;
-
+    // @include size(100% 80px);
+    // @include grid-column(12);
+    // border: 2px solid white;
     md-input-container {
-      @include size(90% 50px);
-      background-color: $light-gray-color;
-      margin-top: 15px;
-      margin-left: 5%;
-      border-radius: 5px;
-      border: 4px solid $dark-gray-color;
+      // @include size(90% 50px);
+      // background-color: $light-gray-color;
+      // margin-top: 15px;
+      // margin-left: 5%;
+      // border-radius: 5px;
+      // border: 4px solid $dark-gray-color;
 
     }
-
-
   }
-
   .search-output {
-    @include size(100% 360px);
-    @include grid-column(12);
-    border: 2px solid white;
-    display: flex;
-    justify-content: space-around;
-
-    ul {
-      border: 2px solid red;
+    // @include size(100% 360px);
+    // @include grid-column(12);
+    // border: 2px solid white;
+    // display: flex;
+    // justify-content: center;
+    img {
+      // border: 4px solid black;
+      // border-radius: 5px;
     }
-
-
-
+    md-chip {
+      // width: 300px;
+      // text-align: center;
+    }
   }
+}
 
+
+#search-card {
+  // @include size(400px 400px);
+  // display: flex;
+  // justify-content: center;
 }

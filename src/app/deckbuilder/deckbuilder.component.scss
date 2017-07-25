@@ -10,36 +10,44 @@ $neat-grid: (
 
 .container {
   @include grid-container;
-
-
-  .side-bar {
-
+  border: 2px solid black;
+  .top-bar {
+    @include grid-column(12);
+    @include size(100% 550px);
     @include grid-container;
-    @include grid-column(2);
-
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     .export-deck {
-      @include grid-column(12);
-      @include size(100% 500px);
+      @include grid-column(3);
+      @include size(18% 500px);
+      // @include size(100% 100px);
+      border: 2px solid orange;
+      order: 1;
+    }
+    .card-search {
+      @include grid-column(6);
+      @include size(60% 500px);
+      // @include size(100% 300px);
       border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      order: 1;
+
     }
     .deck-list {
-      @include grid-column(12);
-      @include size(100% 500px);
-      border: 2px solid red;
+      @include grid-column(3);
+      @include size(18% 500px);
+      // @include size(100% 100px);
+      border: 2px solid blue;
+      order: 1;
     }
-
   }
-
-
   .main-content {
-    @include grid-column(10);
-
-    .card-search {
-      @include grid-column(12);
-      @include size(100% 500px);
-      border: 2px solid red;
-    
-    }
+    @include grid-container;
     .card-display {
       @include grid-column(12);
       @include size(100% 500px);
@@ -50,50 +58,32 @@ $neat-grid: (
       @include size(100% 500px);
       border: 2px solid red;
     }
+  }
+  @media only screen and (max-width: 1100px) {
+    .top-bar {
+
+      flex-direction: column;
+      .export-deck {
+        @include grid-column(12);
+        @include size(100% 100px);
+
+      }
+      .card-search {
+        @include grid-column(12);
+        @include size(100% 300px);
+        order: 2;
+
+
+      }
+      .deck-list {
+        @include grid-column(12);
+        @include size(100% 100px);
+
+
+      }
+    }
+
 
   }
-
-
-  // MEDIA QUERIES
-
-  // medium desktop
-  @media only screen and (max-width: 1400px) {
-
-    .side-bar {
-      @include grid-column(3);
-    }
-
-    .main-content{
-      @include grid-column(9);
-
-    }
-
-  }
-  // small desktop
-  @media only screen and (max-width: 1000px) {
-
-    .side-bar {
-      @include grid-column(4);
-    }
-
-    .main-content{
-      @include grid-column(8);
-
-    }
-
-  }
-  // tablet
-  @media only screen and (max-width: 786px) {
-
-    .side-bar {
-      @include grid-column(5);
-    }
-
-    .main-content{
-      @include grid-column(7);
-
-    }
-
-  }
-
 }
+// BREAK POINTS:

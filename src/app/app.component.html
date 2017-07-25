@@ -1,5 +1,5 @@
 <header>
-  <md-toolbar>
+  <md-toolbar color="primary">
       <span id="logo" routerLink=''>DeckMe</span>
       <span class="toolbar-spacer"></span>
       <div class="user-name" *ngIf="isLoggedIn">
@@ -7,7 +7,7 @@
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
   </md-toolbar>
-  <md-menu #appMenu="mdMenu" id="dropDown">
+  <md-menu color="accent" #appMenu="mdMenu" id="dropDown">
     <button md-menu-item routerLink="">Home</button>
     <button md-menu-item routerLink="deckbuilder">Deck Builder</button>
     <button md-menu-item routerLink="about">About</button>
@@ -19,7 +19,7 @@
 </header>
 <router-outlet></router-outlet>
 <footer>
-  <md-toolbar>
+  <md-toolbar color="primary">
     <span class="copyRight"> © 2017 Copyright</span>
     <span class="toolbar-spacer"></span>
     <span class="copyRight">Links:</span>

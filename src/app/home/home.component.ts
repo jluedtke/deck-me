@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
   loginUser(email: string, password: string) {
     this.authService.loginUser(email, password);
   }
+
+  sendResetPEmail(email: string) {
+    this.authService.passwordResetWithEmail(email);
+  }
 }
