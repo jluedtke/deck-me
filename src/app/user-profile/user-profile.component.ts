@@ -16,13 +16,16 @@ export class UserProfileComponent implements OnInit {
 
   updateUser(update: string) {
     this.authService.updateUsername(update);
+    alert("Username Updated");
   }
 
   updateEmail(update: string) {
     this.authService.updateEmail(update);
+    alert("Email Updated");
   }
 
   passwordReset() {
     this.authService.passwordReset();
+    alert("Password-Reset Email Sent");
   }
 }
