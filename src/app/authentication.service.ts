@@ -13,7 +13,9 @@ export class AuthenticationService {
     this.user = afAuth.authState;
   }
 
-  passwordReset(email: string) {
+  passwordReset() {
+    let email: string = this.afAuth.auth.currentUser.email;
+    console.log(email);
     this.afAuth.auth.sendPasswordResetEmail(email);
   }
 
