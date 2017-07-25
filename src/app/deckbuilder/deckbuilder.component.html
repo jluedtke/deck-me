@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="side-bar">
+  <div class="top-bar">
 
     <div class="export-deck">
       <app-export-deck-form [childDeckToSave]="updatedDeck"></app-export-deck-form>
+    </div>
+    <div class="card-search">
+        <app-search (clickSender)="addToDeck($event)"></app-search>
     </div>
     <div class="deck-list">
       <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
@@ -12,16 +15,14 @@
 
   <div class="main-content">
 
-    <div class="card-search">
-        <app-search (clickSender)="addToDeck($event)"></app-search>
-    </div>
     <div class="card-display">
         <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
     </div>
+
     <div class="deck-charts">
       <app-deck-chart></app-deck-chart>
     </div>
-
+    
   </div>
 
 </div>
