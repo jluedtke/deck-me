@@ -1,9 +1,12 @@
-<button type="button" (click)="countRepeats()"></button>
 <div *ngFor="let type of cardTypes">
   <div class={{type}}>
     <h3>{{type}}</h3>
     <div *ngFor="let card of cardsToDisplay | filterByType:type">
-      <p>{{card.name}}</p>
+      <p (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})</p>
     </div>
   </div>
+</div>
+
+<div *ngIf="cardImage">
+  <img src={{(cardImage)?.imageUrl}}>
 </div>
