@@ -11,8 +11,6 @@ $neat-grid: (
 
 .container {
   @include grid-container;
-
-
   .welcome {
     @include grid-column(12);
     @include size(100% 200px);
@@ -26,6 +24,7 @@ $neat-grid: (
       color: white;
       text-shadow: 1px 1px 1px black;
     }
+
   }
 
   .user-login {
@@ -40,12 +39,12 @@ $neat-grid: (
       border-radius: 5px;
       padding: 20px;
 
-
       h2 {
         color: white;
         text-shadow: 1px 1px 1px black;
         text-align: center;
       }
+
       .new-user {
         // @include size(500px 250px);
         display: flex;
@@ -63,7 +62,6 @@ $neat-grid: (
             .material-icons{
               margin-right: 20px;
             }
-
           }
         }
 
@@ -73,8 +71,6 @@ $neat-grid: (
       }
 
       .old-user {
-        // @include size(500px 250px);
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -92,7 +88,6 @@ $neat-grid: (
             .material-icons{
               margin-right: 20px;
             }
-
           }
         }
 
@@ -104,8 +99,6 @@ $neat-grid: (
           //   color: black;
           // }
         }
-
-
       }
     }
   }
