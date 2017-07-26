@@ -1,4 +1,4 @@
-<div *ngFor="let type of cardTypes">
+<!-- <div *ngFor="let type of cardTypes">
   <div class={{type}}>
     <h3>{{type}}</h3>
     <div *ngFor="let card of cardsToDisplay | filterByType:type">
@@ -9,4 +9,27 @@
 
 <div *ngIf="cardImage">
   <img src={{(cardImage)?.imageUrl}}>
-</div>
+</div> -->
+
+
+<md-card color="accent">
+  <md-card-header>
+    <md-card-title>Deck inventory:</md-card-title>
+    <i class="material-icons">mode_edit</i>
+  </md-card-header>
+  <md-card-content>
+    <div *ngFor="let type of cardTypes">
+      <div class={{type}}>
+        <h3>{{type}}:</h3>
+        <div *ngFor="let card of cardsToDisplay | filterByType:type">
+          <p (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="cardImage">
+      <img src={{(cardImage)?.imageUrl}}>
+    </div>
+
+  </md-card-content>
+</md-card>

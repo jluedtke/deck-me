@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdChipsModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdInputModule, MdChipsModule, MdTooltipModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -61,6 +61,7 @@ export const firebaseConfig = {
     MdIconModule,
     MdInputModule,
     MdChipsModule,
+    MdTooltipModule,
     AngularFireAuthModule //imported
   ],
   providers: [ AuthGaurdService, AuthenticationService, FirebaseToAppService ],

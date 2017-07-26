@@ -57,6 +57,9 @@ $neat-grid: (
       @include grid-column(12);
       @include size(100% 500px);
       border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .deck-charts {
       @include grid-column(12);

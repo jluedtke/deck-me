@@ -3,7 +3,9 @@
     <md-toolbar color="primary">
       <span id="logo" routerLink=''>DeckMe</span>
       <span class="toolbar-spacer"></span>
+      <i class="material-icons">person</i>
       <div class="user-name" *ngIf="isLoggedIn">
+
         <span>{{local.displayName}}</span> <!--ADD CONDI TO DISPLAY LOGIN ICON, NAME !-->
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
