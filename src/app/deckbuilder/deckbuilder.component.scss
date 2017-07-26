@@ -19,6 +19,7 @@ $neat-grid: (
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    border: 2px solid yellow;
     .export-deck {
       @include grid-column(3);
       @include size(18% 500px);
@@ -51,11 +52,17 @@ $neat-grid: (
       order: 1;
     }
   }
-  .main-content {
-    @include grid-container;
+  // .main-content {
+  //   @include grid-container;
+  //   @include size(100% 200px);
+  //   border: 2px solid blue;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    // align-items: center;
     .card-display {
       @include grid-column(12);
-      @include size(100% 500px);
+      @include size(100% 550px);
       border: 2px solid red;
       display: flex;
       justify-content: center;
@@ -63,10 +70,10 @@ $neat-grid: (
     }
     .deck-charts {
       @include grid-column(12);
-      @include size(100% 500px);
+      @include size(100% 550px);
       border: 2px solid red;
     }
-  }
+  // }
   @media only screen and (max-width: 1100px) {
     .top-bar {
       @include size(100% 700px);
