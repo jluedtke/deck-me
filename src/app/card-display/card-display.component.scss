@@ -65,7 +65,18 @@ $neat-grid: (
         }
 
         li {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            margin-left: 5px;
+            font-size: 18px;
+            cursor: pointer;
+
+          }
         }
       }
 
