@@ -37,9 +37,7 @@ $neat-grid: (
 
     .login-pannle {
       @include size(700px);
-      background-color: $dark-gray-color;
       border-radius: 5px;
-      box-shadow: 2px 2px 2px black;
       padding: 20px;
 
 
@@ -53,8 +51,25 @@ $neat-grid: (
         display: flex;
         flex-direction: column;
         padding: 20px;
-        background-color: $light-gray-color;
         border-radius: 5px;
+
+        md-card-header {
+          md-card-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+
+            .material-icons{
+              margin-right: 20px;
+            }
+
+          }
+        }
+
+        button {
+          margin-left: 20px;
+        }
       }
 
       .old-user {
@@ -62,12 +77,36 @@ $neat-grid: (
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 20px;
-        background-color: $light-gray-color;
         border-radius: 5px;
+
+        md-card-header {
+          md-card-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+
+            .material-icons{
+              margin-right: 20px;
+            }
+
+          }
+        }
+
+        button {
+          margin-left: 20px;
+
+          // &:hover {
+          //   background-color: white;
+          //   color: black;
+          // }
+        }
+
+
       }
-
-
     }
   }
 
