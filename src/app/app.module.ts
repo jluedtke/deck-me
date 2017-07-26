@@ -24,6 +24,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DeckListComponent } from './deck-list/deck-list.component';
 import { AboutComponent } from './about/about.component';
 import { FilterByTypePipe } from './filter-by-type.pipe';
+import { ChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -44,7 +46,8 @@ export const firebaseConfig = {
     UserProfileComponent,
     DeckListComponent,
     AboutComponent,
-    FilterByTypePipe
+    FilterByTypePipe,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ export const firebaseConfig = {
     MdIconModule,
     MdInputModule,
     MdChipsModule,
-    AngularFireAuthModule //imported
+    AngularFireAuthModule,
+    ChartsModule
   ],
   providers: [ AuthGaurdService, AuthenticationService, FirebaseToAppService ],
   bootstrap: [AppComponent]
