@@ -26,6 +26,7 @@ import { AboutComponent } from './about/about.component';
 import { FilterByTypePipe } from './filter-by-type.pipe';
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -47,7 +48,8 @@ export const firebaseConfig = {
     DeckListComponent,
     AboutComponent,
     FilterByTypePipe,
-    PieChartComponent
+    PieChartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
