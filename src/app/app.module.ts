@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AuthenticationService } from './authentication.service';
 import { FirebaseToAppService } from './firebase-to-app.service';
+import { AdriansService } from './adrians.service';
 import { AuthGaurdService } from './auth-gaurd.service'; //AuthGaurdService
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -70,7 +71,7 @@ export const firebaseConfig = {
     ChartsModule,
     MdTooltipModule,
   ],
-  providers: [ AuthGaurdService, AuthenticationService, FirebaseToAppService ],
+  providers: [ AuthGaurdService, AuthenticationService, FirebaseToAppService, AdriansService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
