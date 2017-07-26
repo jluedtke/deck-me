@@ -19,6 +19,7 @@ export class DeckbuilderComponent implements OnInit {
   masterCardsToDisplay: any[];
   otherCards: any[];
   outputCounts: any[];
+  cardForCharts: any[];
 
   constructor(private fbaService: FirebaseToAppService, private authService: AuthenticationService) { }
 
@@ -53,10 +54,16 @@ export class DeckbuilderComponent implements OnInit {
 
   getCardsToDisplay() {
     this.masterCardsToDisplay =[];
+    this.cardForCharts = [];
+
+ 
+
     if (this.updatedDeck && this.updatedDeck.cards) {
+
       for (let i = 0; i < this.updatedDeck.cards.length; i++) {
         this.fbaService.getCardById(this.updatedDeck.cards[i]).subscribe(data => {
           this.masterCardsToDisplay.push(data);
+          this.cardForCharts.push(data);
           if (i == this.updatedDeck.cards.length - 1) {
 
             this.countRepeats();
