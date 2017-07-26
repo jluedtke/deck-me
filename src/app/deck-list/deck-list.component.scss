@@ -3,10 +3,11 @@
 @import "../../assets/var.scss";
 
 md-card {
-  height: 400px;
+  height: 450px;
   width: 200px;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+  margin-top: 2px;
 
   md-card-header {
     display: flex;
@@ -20,7 +21,6 @@ md-card {
 
   }
 
-
   md-card-content {
     height: 300px;
     display: flex;
@@ -28,7 +28,6 @@ md-card {
     justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
-    // border: 2px solid red;
     md-chip-list {
       width: 150px;
       text-align: center;
@@ -57,9 +56,8 @@ md-card {
 
 @media only screen and (max-width: 1100px) {
   md-card {
-    height: 100px;
+    height: 140px;
     width: 750px;
-    margin-top: 20px;
 
     md-card-header {
       justify-content: center;

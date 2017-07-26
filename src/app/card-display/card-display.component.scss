@@ -8,20 +8,18 @@ $neat-grid: (
 
 );
 
-
-
 .container {
-  @include size(96% 500px);
+  @include size(100% 500px);
   display: flex;
   justify-content: center;
   align-items: center;
 
   md-card {
-    margin-left: 50px;
+    // margin-left: 50px;
     text-shadow: 1px 1px 1px black;
     box-shadow: 4px 4px 4px solid black;
     border-radius: 5px;
-    @include size(1200px 400px);
+    @include size(100% 450px);
 
     md-card-header {
       height: 35px;
@@ -80,6 +78,11 @@ $neat-grid: (
       ul:nth-child(1) {
         margin-top: 14px;
       }
+    }
+  }
+  @media only screen and (max-width: 1420px) {
+    md-card {
+      height: 490px;
     }
   }
 }
