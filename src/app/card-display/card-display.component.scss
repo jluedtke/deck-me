@@ -1,0 +1,28 @@
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+
+);
+
+md-card {
+  @include size(1510px 450px);
+
+  md-card-header{
+
+    md-card-title {
+
+    }
+
+    .material-icons{
+
+    }
+  }
+
+  md-card-content {
+
+  }
+}

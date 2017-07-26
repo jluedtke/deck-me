@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Deck } from '../deck.model';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 
@@ -12,6 +12,8 @@ import { FirebaseToAppService } from '../firebase-to-app.service';
 })
 export class CardDisplayComponent implements OnInit {
   @Input() cardsToDisplay: any[];
+  @Input() childDeck: any;
+  @Output() clickSender = new EventEmitter();
   cardImage: string;
 
   cardTypes: string[] = ["Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"];
@@ -25,8 +27,9 @@ export class CardDisplayComponent implements OnInit {
 
   getImage(card: any) {
     this.cardImage = card;
-    // else {
-    //   this.imageUrl = null;
-    // }
+  }
+
+  removeCard(card: any) {
+    this.clickSender.emit(card);
   }
 }

@@ -9,7 +9,7 @@ $neat-grid: (
 );
 
   md-card {
-  @include size(650px 400px);
+  @include size(750px 400px);
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
   display: flex;
@@ -63,10 +63,14 @@ $neat-grid: (
   }
 
 
-
+  @media only screen and (max-width: 1330px) {
+    md-card {
+      width: 650px;
+    }
+  }
   @media only screen and (max-width: 1250px) {
     md-card {
-    @include size(550px 325px);
+    @include size(550px 400px);
 
       md-card-content {
         @include size(500px 250px);
@@ -85,7 +89,7 @@ $neat-grid: (
   // BREAKPOINTS
   @media only screen and (max-width: 1100px) {
     md-card {
-    @include size(750px 225px);
+    @include size(750px 250px);
 
       md-card-content {
         @include size(500px 250px);
@@ -115,6 +119,6 @@ $neat-grid: (
     @media only screen and (max-width: 650px) {
       md-card {
         @include size(450px 225px);
-    
+
       }
     }
