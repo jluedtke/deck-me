@@ -12,6 +12,12 @@ export class FilterByTypePipe implements PipeTransform {
     }
     let output: any[] = [];
 
+    for (let x = 0; x < input.length; x++) {
+        if (input[x].types == null) {
+          input.splice(x, 1)
+        }
+    }
+
     if (cardType === "Creature") {
       for (let i = 0; i < input.length; i++) {
         if (input[i].types[0] == cardType || input[i].types[1] == cardType) {

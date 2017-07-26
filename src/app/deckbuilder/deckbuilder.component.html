@@ -16,7 +16,7 @@
   <div class="main-content">
 
     <div class="card-display">
-        <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
+        <app-card-display (clickSender)="setRemoveCard($event)" [cardsToDisplay]="masterCardsToDisplay" [childDeck]="updatedDeck" ></app-card-display>
     </div>
 
     <div class="deck-charts">

@@ -30,6 +30,7 @@
           (click)="updateDeckClicked(deck)">
             {{deck.name}}
       </md-chip>
+      <button (click)=deleteDeck(deck)>Delete</button>
     </md-chip-list>
     <button md-raised-button color="primary" type="button" (click)=createNewDeck()>New Deck</button>
   </md-card-content>

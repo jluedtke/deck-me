@@ -2,7 +2,7 @@
   <div class={{type}}>
     <h3>{{type}}</h3>
     <div *ngFor="let card of cardsToDisplay | filterByType:type">
-      <p (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})</p>
+      <p (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})  <button type="button" (click)="removeCard(card)">Remove :)</button></p>
     </div>
   </div>
 </div>
