@@ -14,7 +14,9 @@
       <md-chip *ngFor="let card of cards"
           selected="true"
           color="primary"
-          (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)">
+          (dblclick)="addCardToDB(card); addToDeckClicked(card.multiverseid)" (mouseover)="setFirstInCards(card)"
+           mdTooltip="{{card.name}},  {{card.manaCost}},  {{card.colors}},  {{card.type}},  {{card.text}}"
+           mdTooltipPosition="right">
           {{card.name}}
       </md-chip>
       <md-chip *ngIf="cards" selected="true" color="accent">Double click to add cards</md-chip>

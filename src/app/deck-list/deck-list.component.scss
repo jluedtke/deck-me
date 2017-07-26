@@ -27,11 +27,12 @@ md-card {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow-y: auto;
     // border: 2px solid red;
     md-chip-list {
       width: 150px;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       cursor: pointer;
 
       md-chip{
