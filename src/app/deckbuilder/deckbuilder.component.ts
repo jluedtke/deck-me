@@ -4,6 +4,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { Deck } from '../deck.model';
 import { Card } from '../card.model';
 import { AuthenticationService } from '../authentication.service';
+import { AdriansService } from '../adrians.service';
 
 
 
@@ -21,7 +22,7 @@ export class DeckbuilderComponent implements OnInit {
   outputCounts: any[];
   cardForCharts: any[];
 
-  constructor(private fbaService: FirebaseToAppService, private authService: AuthenticationService) { }
+  constructor(private fbaService: FirebaseToAppService, private authService: AuthenticationService, private aService: AdriansService) { }
 
   ngOnInit() {
     if (this.updatedDeck == null) {
@@ -50,7 +51,7 @@ export class DeckbuilderComponent implements OnInit {
           this.masterCardsToDisplay.push(data);
           this.cardForCharts.push(data);
           if (i == this.updatedDeck.cards.length - 1) {
-
+            this.aService.getCardTypes(this.cardForCharts);
             this.countRepeats();
           }
         });
