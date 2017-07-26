@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 
 @Component({
@@ -7,12 +7,10 @@ import { FirebaseToAppService } from '../firebase-to-app.service';
   providers: [ FirebaseToAppService ]
 })
 export class PieChartComponent {
-
-  decks;
+  @Input() childChartCards: any[];
 
   constructor(public fbaService: FirebaseToAppService) {
-    this.decks = fbaService.getDecks();
-    console.log(this.decks);
+    
   }
 
   public pieChartLabels:string[] = ['Land', 'Creature', 'Enchantment', 'Instant', 'Sorcery', 'Artifact', 'Planeswalker'];
@@ -20,7 +18,7 @@ export class PieChartComponent {
   public pieChartType:string = 'pie';
 
   public chartClicked(e:any):void {
-    console.log(e);
+    console.log(this.childChartCards);
   }
 
   public chartHovered(e:any):void {
