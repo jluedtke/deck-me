@@ -29,9 +29,21 @@ export class DeckbuilderComponent implements OnInit {
   }
 
   addToDeck(cardId: string) {
-    this.updatedDeck.cards.push(cardId);
+    if (this.updatedDeck.cards) {
+      this.updatedDeck.cards.push(cardId);
+    } else {
+      this.setEmptyDeck(this.updatedDeck, cardId);
+      return;
+    }
     this.fbaService.updateDeck(this.updatedDeck);
     this.getCardsToDisplay();
+  }
+
+  setEmptyDeck(deck: any, cardId: string) {
+    this.updatedDeck = new Deck([cardId], deck.name, deck.uid);
+    this.fbaService.removeDeck(deck);
+    this.fbaService.updateDeck(this.updatedDeck);
+    this.setUpdatedDeck(this.updatedDeck);
   }
 
   setUpdatedDeck(deck: Deck) {
@@ -41,7 +53,7 @@ export class DeckbuilderComponent implements OnInit {
 
   getCardsToDisplay() {
     this.masterCardsToDisplay =[];
-    if (this.updatedDeck) {
+    if (this.updatedDeck && this.updatedDeck.cards) {
       for (let i = 0; i < this.updatedDeck.cards.length; i++) {
         this.fbaService.getCardById(this.updatedDeck.cards[i]).subscribe(data => {
           this.masterCardsToDisplay.push(data);

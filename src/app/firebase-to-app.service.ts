@@ -82,7 +82,6 @@ export class FirebaseToAppService {
   }
 
   removeDeck(deck: any) {
-    console.log(this.database.object('Decks/' + deck.$key));
     this.database.object('Decks/' + deck.$key).remove();
   }
 
