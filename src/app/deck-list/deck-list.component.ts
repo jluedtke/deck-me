@@ -34,4 +34,8 @@ export class DeckListComponent implements OnInit {
     this.clickSender.emit(newDeck);
   }
 
+  deleteDeck(deck: any) {
+    this.fbaService.removeDeck(deck);
+  }
+
 }

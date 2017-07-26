@@ -7,6 +7,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { AuthenticationService } from './authentication.service';
 
 
+
 @Injectable()
 export class FirebaseToAppService {
   decks: FirebaseListObservable<any[]>;
@@ -78,6 +79,26 @@ export class FirebaseToAppService {
 
   createUser(user: User) {
     this.users.push(user);
+  }
+
+  removeDeck(deck: any) {
+    console.log(this.database.object('Decks/' + deck.$key));
+    this.database.object('Decks/' + deck.$key).remove();
+  }
+
+  getCardToRemove(deck: any, card: any) {
+    for (let i = 0; i < deck.cards.length; i++) {
+      if (deck.cards[i] == card.multiverseid) {
+        deck.cards.splice(i, 1);
+        break;
+      }
+    }
+
+    var userDeckInFirebase = this.getDeckById(deck.$key);
+    userDeckInFirebase.update({
+      cards: deck.cards,
+      name: deck.name
+    });
   }
 
 }

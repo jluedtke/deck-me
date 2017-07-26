@@ -84,8 +84,12 @@ export class DeckbuilderComponent implements OnInit {
     for (let j = 0; j < this.outputCounts.length; j++) {
         this.otherCards[j].count = this.outputCounts[j];
     }
-    console.log(this.masterCardsToDisplay);
   }
 
+  setRemoveCard(card: any) {
+    this.fbaService.getCardToRemove(this.updatedDeck, card);
+    this.setUpdatedDeck(this.updatedDeck);
+
+  }
 
 }
