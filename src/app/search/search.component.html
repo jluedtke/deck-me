@@ -9,7 +9,12 @@
   </md-card-header>
   <!-- CARD CONTENT -->
   <md-card-content>
-    <img *ngIf="cards" src="{{(firstInCards)?.imageUrl}}" alt="">
+    <div *ngIf="firstInCards?.imageUrl">
+      <img *ngIf="cards" src="{{(firstInCards)?.imageUrl}}" alt="">
+    </div>
+    <div *ngIf="firstInCards?.imageUrl == null">
+      <img *ngIf="cards" src="assets/card-back.jpg" alt="">
+    </div>
     <md-chip-list class="mat-chip-list-stacked">
       <md-chip *ngFor="let card of cards"
           selected="true"
