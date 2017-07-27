@@ -37,6 +37,12 @@ $neat-grid: (
       }
       md-card-content {
         text-shadow: 1px 1px 1px black;
+
+        h3 {
+          font-size: 28px;
+          margin-bottom: 20px;        }
+
+        font-size: 20px;
       }
     }
 
