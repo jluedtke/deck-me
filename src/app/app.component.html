@@ -1,12 +1,15 @@
 <div class="container">
   <header>
-    <md-toolbar color="primary">
-      <span id="logo" routerLink=''>DeckMe</span>
-      <span class="toolbar-spacer"></span>
-      <i class="material-icons">person</i>
-      <div class="user-name" *ngIf="isLoggedIn">
+    <md-toolbar class="nav-bar"color="primary">
 
-        <span>{{local.displayName}}</span> <!--ADD CONDI TO DISPLAY LOGIN ICON, NAME !-->
+      <span id="logo" routerLink=''>DeckMe</span>
+      <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/189292-200.png" alt="">
+      <span class="toolbar-spacer"></span>
+
+        <i class="material-icons">person</i>
+
+      <div class="user-name" *ngIf="isLoggedIn">
+        <span>{{local.displayName}}</span>
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
     </md-toolbar>

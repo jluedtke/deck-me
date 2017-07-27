@@ -1,0 +1,40 @@
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+
+);
+
+
+.container {
+  @include size(100%);
+  @include grid-container;
+  border: 2px solid yellow;
+
+  .joe {
+    @include grid-column(4);
+    @include size(500px);
+    background-color: red;
+
+  }
+  .jared {
+    @include grid-column(4);
+    @include size(500px);
+    background-color: yellow;
+  }
+  .adrian{
+    @include grid-column(4);
+    @include size(500px);
+    background-color: blue;
+
+  }
+  .info {
+    @include size(100% 500px);
+    @include grid-column(12);
+      background-color: orange;
+
+  }
+}

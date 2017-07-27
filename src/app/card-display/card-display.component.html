@@ -20,7 +20,8 @@
       <ul *ngFor="let type of cardTypes" class={{type}}>
         <md-chip selected="true"
         color="primary">{{type}}:</md-chip>
-        <li *ngFor="let card of cardsToDisplay | filterByType:type" (mouseover)="getImage(card)"> {{card.name}} (x{{card.count}}) <i class="material-icons" (click)="removeCard(card)">highlight_off</i>
+        <li *ngFor="let card of cardsToDisplay | filterByType:type" (mouseover)="getImage(card)" mdTooltip="{{card.name}},  {{card.manaCost}},  {{card.colors}},  {{card.type}},  {{card.text}}"
+         mdTooltipPosition="right"> {{card.name}} (x{{card.count}}) <i class="material-icons" (click)="removeCard(card)">highlight_off</i>
 
         </li>
       </ul>
@@ -31,31 +32,3 @@
   </md-card>
 
 </div>
-
-
-<!-- <div >
-  <div >
-
-    <div >
-      <p ></p>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="cardImage">
-  <img src={{(cardImage)?.imageUrl}}>
-</div> -->
-
-
-<!-- <div *ngFor="let type of cardTypes">
-  <div class={{type}}>
-    <h3>{{type}}:</h3>
-    <div *ngFor="let card of cardsToDisplay | filterByType:type">
-      <p (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})</p>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="cardImage">
-  <img src={{(cardImage)?.imageUrl}}>
-</div> -->
