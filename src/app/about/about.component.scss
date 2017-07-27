@@ -37,10 +37,12 @@ $neat-grid: (
       }
       md-card-content {
         text-shadow: 1px 1px 1px black;
+        padding: 40px;
 
         h3 {
           font-size: 28px;
-          margin-bottom: 20px;        }
+          margin-bottom: 20px;
+        }
 
         font-size: 20px;
       }
@@ -66,6 +68,14 @@ $neat-grid: (
       }
       md-card-content {
         text-shadow: 1px 1px 1px black;
+        padding: 20px;
+
+        h3 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+
+        font-size: 20px;
       }
     }
   }
@@ -88,6 +98,14 @@ $neat-grid: (
       }
       md-card-content {
         text-shadow: 1px 1px 1px black;
+        padding: 20px;
+
+        h3 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+
+        font-size: 20px;
       }
     }
 
@@ -98,5 +116,6 @@ $neat-grid: (
     // border: 1px solid orange;
     color: white;
     text-shadow: 1px 1px 1px black;
+    font-size: 30px;
   }
 }
