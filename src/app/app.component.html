@@ -6,11 +6,13 @@
         <span id="logo" routerLink=''>DeckMe</span>
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/189292-200.png" alt="">
         <!-- <span class="toolbar-spacer"></span> -->
-        <div class="user-name" *ngIf="isLoggedIn">
-          <i class="material-icons">person</i>
-          <span><a routerLink="profile">{{local.displayName}}</a></span>
+        <div class="nav-box">
+          <div class="user-name" *ngIf="isLoggedIn">
+            <i class="material-icons">person</i>
+            <span><a routerLink="profile">{{local.displayName}}</a></span>
+          </div>
+          <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
         </div>
-        <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
       </md-toolbar-row>
 
     </md-toolbar>

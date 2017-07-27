@@ -22,7 +22,6 @@ md-toolbar {
   justify-content: flex-end;
 
   md-toolbar-row {
-    border: 2px solid red;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -34,22 +33,45 @@ md-toolbar {
 
 
     img {
-      @include size(100px);
+      @include size(145px);
       display: flex;
       align-self: center;
+      margin-top: 30px;
+      margin-left: 100px;
     }
 
-    .user-name {
+    .nav-box {
+      height: 50px;
+      width: 200px;
       display: flex;
-      flex-direction: row;
+      justify-content: space-between;
+
+      .user-name {
+        display: flex;
+        flex-direction: row;
+        margin-top: 6px;
+
+        span {
+          a {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
 
 
-      .material-icons {
-        margin-right: 20px;
-        margin-top: 5px;
+        .material-icons {
+          margin-right: 20px;
+          margin-top: 5px;
+        }
+
       }
-
     }
+
 
 
   }
@@ -96,3 +118,15 @@ footer {
       flex-grow: 2;
     }
 }
+
+
+  @media only screen and (max-width: 620px) {
+    md-toolbar {
+      md-toolbar-row{
+        img {
+          margin-left: 0px;
+        }
+      }
+    }
+
+  }
