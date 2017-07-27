@@ -29,7 +29,7 @@ export class PieChartComponent implements OnChanges {
   public pieChartLabels:string[] = ['Land', 'Creature', 'Enchantment', 'Instant', 'Sorcery', 'Artifact', 'Planeswalker'];
   public pieChartData:number[] = [1,1,1,1,1,1,1];
   public pieChartType:string = 'pie';
-
+  public pieChartLegend:boolean = false;
   chartClicked(e:any):void {
     console.log(e);
   }

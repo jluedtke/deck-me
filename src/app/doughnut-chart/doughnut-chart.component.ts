@@ -27,7 +27,7 @@ export class DoughnutChartComponent implements OnChanges {
   public doughnutChartLabels:string[] = ['Red', 'Blue', 'Duals', 'White', 'Green', 'Black'];
   public doughnutChartData:number[] = [1,1,1,1,1,1];
   public doughnutChartType:string = 'doughnut';
-
+  public doughnutChartLegend:boolean = false;
   // events
   chartClicked(e:any):void {
     console.log(e);

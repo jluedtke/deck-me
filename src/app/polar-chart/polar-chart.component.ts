@@ -27,7 +27,7 @@ export class PolarChartComponent implements OnChanges {
   public pieChartLabels:string[] =  ['Mythic Rare', 'Rare', 'Uncommon', 'Common'];
   public pieChartData:number[] = [1,1,1,1];
   public pieChartType:string = 'pie';
-
+  public pieChartLegend:boolean = false;
   // events
   chartClicked(e:any):void {
     console.log(e);
