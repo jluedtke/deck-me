@@ -1,3 +1,14 @@
-<app-pie-chart [childChartCards]="chartCards"></app-pie-chart>
-<app-doughnut-chart [childCards]="chartCards"></app-doughnut-chart>
-<app-polar-chart [childrenCards]="chartCards"></app-polar-chart>
+<div class="container">
+  <div class="pie">
+    <app-pie-chart [childChartCards]="chartCards"></app-pie-chart>
+  </div>
+  <div class="doughnut">
+    <app-doughnut-chart [childCards]="chartCards"></app-doughnut-chart>
+  </div>
+  <div class="polar">
+    <app-polar-chart [childrenCards]="chartCards"></app-polar-chart>
+  </div>
+  <div class="bar">
+
+  </div>
+</div>

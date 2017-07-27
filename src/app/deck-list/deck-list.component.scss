@@ -4,7 +4,7 @@
 
 md-card {
   height: 450px;
-  width: 200px;
+  width: 275px;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
   margin-top: 2px;
@@ -48,6 +48,16 @@ md-card {
   }
 
 }
+@media only screen and (max-width: 1620px) {
+  md-card {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 1475px) {
+  md-card {
+    width: 200px;
+  }
+}
 @media only screen and (max-width: 1420px) {
   md-card {
     width: 150px;
@@ -61,11 +71,21 @@ md-card {
 
     md-card-header {
       justify-content: center;
+      height: 15px;
     }
     md-card-content {
-      height: 70px;
+      height: 130px;
       flex-direction: row;
       justify-content: center;
+      align-items: center;
+
+      md-chip-list {
+        margin-top: 43px;
+
+        md-chip {
+          margin-right: 10px;
+        }
+      }
 
       md-input-container {
         width: 300px;

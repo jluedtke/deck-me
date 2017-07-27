@@ -10,7 +10,7 @@ $neat-grid: (
 
 md-card {
   height: 445px;
-  width: 200px;
+  width: 275px;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
 
@@ -42,6 +42,16 @@ md-card {
     }
   }
 
+}
+@media only screen and (max-width: 1620px) {
+  md-card {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 1475px) {
+  md-card {
+    width: 200px;
+  }
 }
 @media only screen and (max-width: 1420px) {
   md-card {

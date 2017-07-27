@@ -12,29 +12,85 @@ $neat-grid: (
 .container {
   @include size(100%);
   @include grid-container;
-  border: 2px solid yellow;
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
 
   .joe {
-    @include grid-column(4);
-    @include size(500px);
-    background-color: red;
+    @include grid-column(12);
+    @include size(100% 400px);
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    md-card {
+      @include size(90% 300px);
+      md-card-header {
+        @include size(100% 100px);
+        text-shadow: 1px 1px 1px black;
+        md-card-title {
+          font-size: 30px;
+        }
+      }
+      md-card-content {
+        text-shadow: 1px 1px 1px black;
+      }
+    }
 
   }
   .jared {
-    @include grid-column(4);
-    @include size(500px);
-    background-color: yellow;
+    @include grid-column(12);
+    @include size(100% 400px);
+    // border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    md-card {
+      @include size(90% 300px);
+      md-card-header {
+        @include size(100% 100px);
+        text-shadow: 1px 1px 1px black;
+        md-card-title {
+          font-size: 30px;
+        }
+      }
+      md-card-content {
+        text-shadow: 1px 1px 1px black;
+      }
+    }
   }
   .adrian{
-    @include grid-column(4);
-    @include size(500px);
-    background-color: blue;
+    @include grid-column(12);
+    @include size(100% 400px);
+    // border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    md-card {
+      @include size(90% 300px);
+      md-card-header {
+        @include size(100% 100px);
+        text-shadow: 1px 1px 1px black;
+        md-card-title {
+          font-size: 30px;
+        }
+      }
+      md-card-content {
+        text-shadow: 1px 1px 1px black;
+      }
+    }
 
   }
   .info {
-    @include size(100% 500px);
+    @include size(100% 400px);
     @include grid-column(12);
-      background-color: orange;
-
+    // border: 1px solid orange;
+    color: white;
+    text-shadow: 1px 1px 1px black;
   }
 }

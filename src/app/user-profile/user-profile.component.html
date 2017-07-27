@@ -1,15 +1,3 @@
-<!-- <h1>User Profile</h1>
-
-<input type="text" #changeName>
-<button (click)="updateUser(changeName.value); changeName.value='';">Update Username</button>
-
-<input type="text" #changeEmail>
-<button (click)="updateEmail(changeEmail.value); changeEmail.value='';">Update Email</button>
-
-<button (click)="passwordReset()">Passsword Reset</button>
- -->
-
-
 <div class="container">
 
   <md-card>
@@ -23,16 +11,15 @@
 
       <button md-raised-button color="primary"(click)="updateUser(changeName.value); changeName.value='';">Update Username</button>
 
-      
+
       <md-input-container color="accent">
         <input mdInput type="text" placeholder="Update your email: {{email}}" #changeEmail>
       </md-input-container>
 
       <button  md-raised-button color="primary" (click)="updateEmail(changeEmail.value); changeEmail.value='';">Update Email</button>
 
-      <button md-raised-button color="primary"(click)="passwordReset()">Passsword Reset</button>
+      <button md-raised-button color="primary"(click)="passwordReset()" mdTooltip="Clicking this button will send a password reset link to your email address!">Passsword Reset</button>
   </md-card-content>
 
 </md-card>
-  <app-deck-list></app-deck-list>
 </div>
