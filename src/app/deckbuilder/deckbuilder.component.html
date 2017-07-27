@@ -13,59 +13,13 @@
 
   </div>
 
-  <!-- <div class="main-content"> -->
 
-    <div class="card-display">
-        <app-card-display (clickSender)="setRemoveCard($event)" [cardsToDisplay]="masterCardsToDisplay" [childDeck]="updatedDeck" ></app-card-display>
-    </div>
+  <div class="card-display">
+      <app-card-display (clickSender)="setRemoveCard($event)" [cardsToDisplay]="masterCardsToDisplay" [childDeck]="updatedDeck" ></app-card-display>
+  </div>
 
-    <div class="deck-charts">
-      <app-deck-chart [chartCards]="cardForCharts"></app-deck-chart>
-    </div>
-
-  <!-- </div> -->
+  <div class="deck-charts">
+    <app-deck-chart [chartCards]="cardForCharts"></app-deck-chart>
+  </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- GRID START -->
-<!-- <md-grid-list cols="4" rowHeight="500px" gutterSize='20px'>
-
-  <md-grid-tile colspan='1' rowspan='3'>
-    <div class="export-deck">
-      <app-export-deck-form [childDeckToSave]="updatedDeck"></app-export-deck-form>
-    </div>
-  </md-grid-tile>
-
-  <md-grid-tile colspan='3' rowspan='1'>
-    <div class="deck-list">
-      <app-deck-list (clickSender)="setUpdatedDeck($event)"></app-deck-list>
-    </div>
-    <app-search (clickSender)="addToDeck($event)"></app-search>
-  </md-grid-tile>
-
-  <md-grid-tile colspan='3' rowspan='1'>
-    <app-card-display [cardsToDisplay]="masterCardsToDisplay"></app-card-display>
-  </md-grid-tile>
-
-  <md-grid-tile colspan='3' rowspan='1'>
-    <app-deck-chart></app-deck-chart>
-  </md-grid-tile>
-
-</md-grid-list> -->
-<!-- GRID END -->
-<!-- !ADRIAN! - implement canActivateChild for these child comps !-->
-<!-- Keep it groovy -->

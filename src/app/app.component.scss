@@ -1,18 +1,29 @@
+@import "../assets/bourbon/bourbon";
+@import "/../assets/neat/neat";
 @import "/../assets/var.scss";
 
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+
+);
 .toolbar-spacer {
   flex: 1 1 auto;
 }
 
 .user-name {
 margin-right: 20px;
+
+  span{
+    display: block;
+  }
 }
 
 .material-icons {
   margin-right: 20px;
 }
 md-toolbar {
-  background-color: $brown-color;
+  width: 100%;
   color: white;
   text-shadow: 1px 1px 1px black;
   border-radius: 3px;
@@ -20,9 +31,17 @@ md-toolbar {
   display: flex;
   justify-content: center;
   box-shadow: 2px 2px 2px black;
+
+
+  img {
+    @include size(100px);
+    margin-top: 0px;
+    margin-left: 50px;
+  }
 }
 
 #logo {
+  display: block;
   font-size: 30px;
   font-family: $titleFont;
 }

@@ -1,0 +1,33 @@
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+
+);
+
+
+.container {
+  @include grid-container;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+
+
+  md-card {
+    @include size(600px);
+
+    md-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      md-input-container {
+        margin: 20px 0;
+      }
+
+    }
+  }
+}
