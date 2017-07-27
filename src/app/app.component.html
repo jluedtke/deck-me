@@ -9,7 +9,7 @@
         <i class="material-icons">person</i>
 
       <div class="user-name" *ngIf="isLoggedIn">
-        <span>{{local.displayName}}</span>
+        <span><a routerLink="profile">{{local.displayName}}</a></span>
       </div>
       <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
     </md-toolbar>
