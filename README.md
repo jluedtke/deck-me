@@ -31,7 +31,7 @@ User can receive email verification of account creation and password reset | 'Re
 * Create a file named 'api-keys.ts' in src/app
   * it should contain:
     * export var masterFirebaseConfig = {
-      ~FIREBASE INFORMATION HERE~
+      ~FIREBASE INFORMATION HERE*
     }
 * Locate package.json for Angular commands
   * Run 'ng serve' to view locally (localhost:4200)
