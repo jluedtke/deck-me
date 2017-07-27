@@ -8,12 +8,14 @@
         <!-- <span class="toolbar-spacer"></span> -->
 
 
+
         <div class="user-name" *ngIf="isLoggedIn">
           <i class="material-icons">person</i>
-          <span>{{local.displayName}}</span>
+          <span><a routerLink="profile">{{local.displayName}}</a></span>
         </div>
         <button id="navMenu" md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
       </md-toolbar-row>
+
     </md-toolbar>
     <md-menu color="accent" #appMenu="mdMenu" id="dropDown">
       <button md-menu-item routerLink="">Home</button>

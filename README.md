@@ -1,28 +1,53 @@
 # DeckMe
+  Magic: The Gathering deck building application that allows users to search for cards and create a deck.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+##### Joe Parsley(Design), Adrian Agnic(Development), Jared Luedtke(Development)  (7-27-2017)
 
-## Development server
+## Description
+  Application that allows users to search for specific Magic cards, and construct a deck. Users can create an account to keep track of all their decks. Users can also view statistical information about their deck.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Specifications
+Spec | Input | Output
+--- | --- | ---
+User creates an account | 'Create New User' | 'username, user@email.com, password'
+User logs in | 'Log In' | 'user@email.com, password'
+User creates a new deck | 'New Deck' | 'Empty Deck'
+User searches for cards | 'Sol Ring' | 'Sol Ring -colorless -artifact'
+User adds cards to deck | 'MyDeck' | '-Sol Ring'
+User views deck graphs | ' ' | '15 Land, 25 Creatures, 10 Instants'
+User deletes deck | 'Delete MyDeck' | 'Deck Deleted'
+User views profile page | 'Profile' | ' '
+User updates account information | 'Update Email' | 'newemail@yes.com'
+User can receive email verification of account creation and password reset | 'Reset Password' | 'Password Reset Email Sent'
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Installation
+* Go-to <a href="https://github.com/jluedtke/deck-me">GitHub</a>
+* Clone repository to your machine (ex. git clone www.git.com/project)
+* Navigate to the project directory with a terminal
+* Run commands:
+  * npm install
+  * npm install promise-polyfill --save
+* Create a file named 'api-keys.ts' in src/app
+  * it should contain:
+    * export var masterFirebaseConfig = {
+      ~FIREBASE INFORMATION HERE*
+    }
+* Locate package.json for Angular commands
+  * Run 'ng serve' to view locally (localhost:4200)
+* Please log any contributions
 
-## Build
+## Technologies
+* Angular
+* Javascript
+  * Typescript
+* Firebase
+* HTML
+* CSS/Sass
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Known Bugs
+  Certain cards without an image property will not display, but they can still be added to a deck
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+  Protected under MIT License
+  Copyright (c) 2017 Copyright Holder All Rights Reserved.
