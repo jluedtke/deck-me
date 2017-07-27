@@ -8,36 +8,53 @@ $neat-grid: (
 
 );
 .toolbar-spacer {
-  flex: 1 1 auto;
+  // flex: 1 1 auto;
 }
 
-.user-name {
-margin-right: 20px;
-
-  span{
-    display: block;
-  }
-}
-
-.material-icons {
-  margin-right: 20px;
-}
 md-toolbar {
   width: 100%;
   color: white;
   text-shadow: 1px 1px 1px black;
   border-radius: 3px;
   height: 100px;
-  display: flex;
-  justify-content: center;
   box-shadow: 2px 2px 2px black;
+  display: flex;
+  justify-content: flex-end;
+
+  md-toolbar-row {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+
+    }
 
 
-  img {
-    @include size(100px);
-    margin-top: 0px;
-    margin-left: 50px;
+    img {
+      @include size(100px);
+      display: flex;
+      align-self: center;
+    }
+
+    .user-name {
+      display: flex;
+      flex-direction: row;
+
+
+      .material-icons {
+        margin-right: 20px;
+        margin-top: 5px;
+      }
+
+    }
+
+
   }
+
+
 }
 
 #logo {

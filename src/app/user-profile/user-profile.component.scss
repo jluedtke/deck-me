@@ -11,21 +11,40 @@ $neat-grid: (
 
 .container {
   @include grid-container;
-  border: 2px solid red;
+  @include size(100%);
   display: flex;
   justify-content: center;
-
+  align-items: center;
 
   md-card {
-    @include size(600px);
+    margin-top: 135px;
+    @include size(800px);
+
+    md-card-header {
+      md-card-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+
+        .material-icons{
+          margin-right: 20px;
+        }
+      }
+    }
 
     md-card-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
 
+
       md-input-container {
-        margin: 20px 0;
+        margin: 50px 0;
+      }
+
+      button:nth-of-type(3) {
+        margin-top: 200px;
       }
 
     }

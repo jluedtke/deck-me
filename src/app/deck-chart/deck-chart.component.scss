@@ -1,0 +1,50 @@
+@import "../../assets/bourbon/bourbon";
+@import "../../assets/neat/neat";
+@import "../../assets/var.scss";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 0px,
+);
+
+.container {
+  @include grid-container;
+  @include size(100% 650px);
+  // border: 2px solid yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .pie {
+    @include grid-column(3);
+    // border: 2px solid yellow;
+  }
+  .doughnut {
+    // border: 2px solid yellow;
+    @include grid-column(3);
+  }
+  .polar {
+    // border: 2px solid yellow;
+    @include grid-column(3);
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .container {
+
+
+    .pie {
+      @include grid-column(12);
+    }
+    .doughnut {
+      @include grid-column(12);
+    }
+    .polar {
+      @include grid-column(12);
+    }
+
+  }
+
+}
