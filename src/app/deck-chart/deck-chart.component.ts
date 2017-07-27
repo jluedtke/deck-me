@@ -10,7 +10,10 @@ import { AdriansService } from '../adrians.service';
 })
 export class DeckChartComponent {
   @Input() chartCards: any;
-  barChartData =  this.aService.getCardManaCost(this.chartCards);
+  @Input() childBarChartData: any[];
+  @Input() childPieChartData: any[];
+  @Input() childPolarChartData: any[];
+  @Input() childDoughnutChartData: any[];
 
   constructor(public fbaService: FirebaseToAppService, public aService: AdriansService) {
   }

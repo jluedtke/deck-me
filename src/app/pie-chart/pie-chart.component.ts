@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 import { AdriansService } from '../adrians.service';
 
@@ -7,11 +7,22 @@ import { AdriansService } from '../adrians.service';
   templateUrl: './pie-chart.component.html',
   providers: [ FirebaseToAppService, AdriansService ]
 })
-export class PieChartComponent {
-  @Input() childChartCards: any[];
+export class PieChartComponent implements OnChanges {
+  @Input() chartData: any[];
 
   constructor(public fbaService: FirebaseToAppService, public aService: AdriansService) {
 
+  }
+
+  ngOnChanges(changes: any) {
+    if (changes.chartData.currentValue) {
+      if (changes.chartData.currentValue.length < 1) {
+        console.log(changes.chartData.currentValue)
+      } else {
+        console.log(changes.chartData.currentValue)
+        this.pieChartData = changes.chartData.currentValue;
+      }
+    }
   }
 
   public data: number[];
@@ -25,9 +36,5 @@ export class PieChartComponent {
 
   chartHovered(e:any):void {
     console.log(e);
-  }
-
-  resetGraph() {
-    this.pieChartData = this.aService.getCardTypes(this.childChartCards);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 import { AdriansService } from '../adrians.service';
 
@@ -7,10 +7,22 @@ import { AdriansService } from '../adrians.service';
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html'
 })
-export class BarChartComponent {
-  @Input() childBarData: any[];
+export class BarChartComponent implements OnChanges {
+  @Input() chartData: any[];
 
   constructor(public fbaService: FirebaseToAppService, public aService: AdriansService) {
+  }
+
+  ngOnChanges(changes: any) {
+    if (changes.chartData.currentValue) {
+      if (changes.chartData.currentValue.length < 1) {
+        console.log(changes.chartData.currentValue)
+      } else {
+        console.log(changes.chartData.currentValue)
+        this.barChartData = changes.chartData.currentValue;
+      }
+    }
+
   }
 
   public barChartOptions:any = {
@@ -21,7 +33,9 @@ export class BarChartComponent {
   public barChartType:string = 'bar';
   public barChartLegend:boolean = false;
 
-  public barChartData:any[] = this.childBarData;
+  public barChartData:any[] = [
+    {data: [1,1,1,1,1,1,1,1]},
+  ];
 
   // events
   public chartClicked(e:any):void {
@@ -31,10 +45,5 @@ export class BarChartComponent {
   public chartHovered(e:any):void {
     console.log(e);
   }
-
-  // public resetGraph() {
-  //   this.barChartData = this.aService.getCardManaCost(this.childChartCards);
-  //   console.log(this.barChartData);
-  // }
 
 }

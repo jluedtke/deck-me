@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { AdriansService } from '../adrians.service';
 
 @Component({
@@ -6,10 +6,22 @@ import { AdriansService } from '../adrians.service';
   templateUrl: './doughnut-chart.component.html',
   providers: [ AdriansService ]
 })
-export class DoughnutChartComponent {
-  @Input() childCards: any[];
+export class DoughnutChartComponent implements OnChanges {
+  @Input() chartData: any[];
 
   constructor(public aService: AdriansService) { }
+
+  ngOnChanges(changes: any) {
+    if (changes.chartData.currentValue) {
+      if (changes.chartData.currentValue.length < 1) {
+        console.log(changes.chartData.currentValue)
+      } else {
+        console.log(changes.chartData.currentValue)
+        this.doughnutChartData = changes.chartData.currentValue;
+      }
+    }
+
+  }
 
   // Doughnut
   public doughnutChartLabels:string[] = ['Red', 'Blue', 'Duals', 'White', 'Green', 'Black'];
@@ -23,9 +35,5 @@ export class DoughnutChartComponent {
 
   chartHovered(e:any):void {
     console.log(e);
-  }
-
-  resetGraph() {
-    this.doughnutChartData = this.aService.getCardColors(this.childCards);
   }
 }
