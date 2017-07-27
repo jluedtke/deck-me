@@ -15,7 +15,7 @@ export class AppComponent {
 
   user; //provided by service
   local;
-  private isLoggedIn: boolean;
+  public isLoggedIn: boolean;
 
   constructor(public authService: AuthenticationService, public authGaurd: AuthGaurdService, public router: Router) {
     this.authService.user.subscribe(user => {

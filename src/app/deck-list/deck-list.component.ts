@@ -35,7 +35,7 @@ export class DeckListComponent implements OnInit {
   }
 
   deleteDeck(deck: any) {
-    if (confirm('Are you sure you want to delte this deck? All cards within will be lost.')) {
+    if (confirm('Are you sure you want to delete this deck? All cards will be lost.')) {
       this.fbaService.removeDeck(deck);
       this.createNewDeck();
     }
