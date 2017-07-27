@@ -42,11 +42,13 @@ User can receive email verification of account creation and password reset | 'Re
 * Javascript
   * Typescript
 * Firebase
+* Charts.js
+* Material
 * HTML
 * CSS/Sass
 
 ## Known Bugs
-  Certain cards without an image property will not display, but they can still be added to a deck
+  Certain cards without a multiverse id cannot be added to a deck
 
 ## License
   Protected under MIT License
