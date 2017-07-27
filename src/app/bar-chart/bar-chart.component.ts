@@ -2,16 +2,15 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { FirebaseToAppService } from '../firebase-to-app.service';
 import { AdriansService } from '../adrians.service';
 
+
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  providers: [ FirebaseToAppService, AdriansService ]
+  selector: 'app-bar-chart',
+  templateUrl: './bar-chart.component.html'
 })
-export class PieChartComponent implements OnChanges {
+export class BarChartComponent implements OnChanges {
   @Input() chartData: any[];
 
   constructor(public fbaService: FirebaseToAppService, public aService: AdriansService) {
-
   }
 
   ngOnChanges(changes: any) {
@@ -20,21 +19,31 @@ export class PieChartComponent implements OnChanges {
         console.log(changes.chartData.currentValue)
       } else {
         console.log(changes.chartData.currentValue)
-        this.pieChartData = changes.chartData.currentValue;
+        this.barChartData = changes.chartData.currentValue;
       }
     }
+
   }
 
-  public data: number[];
-  public pieChartLabels:string[] = ['Land', 'Creature', 'Enchantment', 'Instant', 'Sorcery', 'Artifact', 'Planeswalker'];
-  public pieChartData:number[] = [1,1,1,1,1,1,1];
-  public pieChartType:string = 'pie';
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels:string[] = ['0', '1', '2', '3', '4', '5', '6', '7+'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = false;
 
-  chartClicked(e:any):void {
+  public barChartData:any[] = [
+    {data: [1,1,1,1,1,1,1,1]},
+  ];
+
+  // events
+  public chartClicked(e:any):void {
     console.log(e);
   }
 
-  chartHovered(e:any):void {
+  public chartHovered(e:any):void {
     console.log(e);
   }
+
 }

@@ -1,14 +1,14 @@
 <div class="container">
   <div class="pie">
-    <app-pie-chart [childChartCards]="chartCards"></app-pie-chart>
+    <app-pie-chart [chartData]="childPieChartData"></app-pie-chart>
   </div>
   <div class="doughnut">
-    <app-doughnut-chart [childCards]="chartCards"></app-doughnut-chart>
+    <app-doughnut-chart [chartData]="childDoughnutChartData"></app-doughnut-chart>
   </div>
   <div class="polar">
-    <app-polar-chart [childrenCards]="chartCards"></app-polar-chart>
+    <app-polar-chart [chartData]="childPolarChartData"></app-polar-chart>
   </div>
   <div class="bar">
-
+    <app-bar-chart [chartData]="childBarChartData"></app-bar-chart>
   </div>
 </div>
