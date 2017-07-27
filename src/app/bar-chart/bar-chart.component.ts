@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { FirebaseToAppService } from '../firebase-to-app.service';
+import { AdriansService } from '../adrians.service';
+
 
 @Component({
   selector: 'app-bar-chart',
@@ -7,6 +10,8 @@ import { Component, Input } from '@angular/core';
 export class BarChartComponent {
   @Input() childChartCards: any[];
 
+  constructor(public fbaService: FirebaseToAppService, public aService: AdriansService) {
+  }
 
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
@@ -17,7 +22,7 @@ export class BarChartComponent {
   public barChartLegend:boolean = false;
 
   public barChartData:any[] = [
-    {data: [10, 12, 8, 10, 7, 6, 1, 5], label: 'Series A'},
+    {data: [10, 12, 8, 10, 7, 6, 1, 5]},
   ];
 
   // events
@@ -27,6 +32,11 @@ export class BarChartComponent {
 
   public chartHovered(e:any):void {
     console.log(e);
+  }
+
+  public resetGraph() {
+    this.barChartData = this.aService.getCardManaCost(this.childChartCards);
+    console.log(this.barChartData);
   }
 
 }
