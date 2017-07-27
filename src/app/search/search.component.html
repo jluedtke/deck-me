@@ -12,7 +12,7 @@
     <div *ngIf="firstInCards?.imageUrl">
       <img *ngIf="cards" src="{{(firstInCards)?.imageUrl}}" alt="">
     </div>
-    <div *ngIf="firstInCards?.imageUrl == null">
+    <div id="test"*ngIf="firstInCards?.imageUrl == null">
       <img *ngIf="cards" src="assets/card-back.jpg" alt="">
     </div>
     <md-chip-list class="mat-chip-list-stacked">

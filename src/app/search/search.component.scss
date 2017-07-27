@@ -48,6 +48,12 @@ $neat-grid: (
         border-radius: 15px;
       }
 
+      #test {
+        img {
+          @include size(220px 310px);
+        }
+      }
+
       md-chip {
         width: 200px;
         text-align: center;
