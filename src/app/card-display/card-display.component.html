@@ -18,8 +18,10 @@
     </md-card-header>
     <md-card-content>
       <ul *ngFor="let type of cardTypes" class={{type}}>
-        <h3>{{type}}:</h3>
-        <li *ngFor="let card of cardsToDisplay | filterByType:type" (mouseover)="getImage(card)">{{card.name}} (x{{card.count}})
+        <md-chip selected="true"
+        color="primary">{{type}}:</md-chip>
+        <li *ngFor="let card of cardsToDisplay | filterByType:type" (mouseover)="getImage(card)"> {{card.name}} (x{{card.count}}) <i class="material-icons" (click)="removeCard(card)">highlight_off</i>
+
         </li>
       </ul>
       <!-- <div *ngIf="cardImage">

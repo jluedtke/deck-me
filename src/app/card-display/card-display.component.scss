@@ -8,28 +8,23 @@ $neat-grid: (
 
 );
 
-
-
 .container {
-  @include size(96% 500px);
+  @include size(100% 500px);
   display: flex;
   justify-content: center;
   align-items: center;
 
   md-card {
-    margin-left: 50px;
+    // margin-left: 50px;
     text-shadow: 1px 1px 1px black;
     box-shadow: 4px 4px 4px solid black;
     border-radius: 5px;
-
-    @include size(1200px 400px);
+    @include size(100% 450px);
 
     md-card-header {
       height: 35px;
       display: flex;
       justify-content: center;
-
-
 
       md-card-title {
         margin-top: 5px;
@@ -43,15 +38,13 @@ $neat-grid: (
 
     md-card-content {
       @include size(100% 365px);
-
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       overflow-y: auto;
 
       ul {
         width: 125px;
-        // border: 2px solid yellow;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -59,32 +52,37 @@ $neat-grid: (
         margin-bottom: 5px;
         margin-left: 10px;
 
-        h3 {
-          align-items: center;
-          padding: 0;
+        md-chip {
+          text-align: center;
+          width: 100px;
+          color: white;
+          margin-bottom: 10px;
         }
 
         li {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            margin-left: 5px;
+            font-size: 18px;
+            cursor: pointer;
+
+          }
         }
       }
 
       ul:nth-child(1) {
         margin-top: 14px;
       }
-
-      ul:nth-child(3) {
-      }
-      ul:nth-child(7) {
-        margin-right: 10px;
-      }
-
     }
   }
-
-
-
-
-
-
+  @media only screen and (max-width: 1420px) {
+    md-card {
+      height: 490px;
+    }
+  }
 }

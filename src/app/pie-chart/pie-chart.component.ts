@@ -16,7 +16,7 @@ export class PieChartComponent {
 
   public data: number[];
   public pieChartLabels:string[] = ['Land', 'Creature', 'Enchantment', 'Instant', 'Sorcery', 'Artifact', 'Planeswalker'];
-  public pieChartData:number[] = [10,10,10,10,10,10, 10];
+  public pieChartData:number[] = [10,10,10,10,10,10,10];
   public pieChartType:string = 'pie';
 
   public chartClicked(e:any):void {
