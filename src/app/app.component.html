@@ -5,7 +5,6 @@
 
         <span id="logo" routerLink=''>DeckMe</span>
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/189292-200.png" alt="">
-        <!-- <span class="toolbar-spacer"></span> -->
         <div class="nav-box">
           <div class="user-name" *ngIf="isLoggedIn">
             <i class="material-icons">person</i>
@@ -30,11 +29,20 @@
     <router-outlet></router-outlet>
   </div>
   <footer>
-    <md-toolbar color="primary">
-      <span class="copyRight"> © 2017 Copyright</span>
-      <span class="toolbar-spacer"></span>
-      <span class="copyRight">Links:</span>
-      <button md-button>GitHub</button>
+    <md-toolbar class="footer" color="primary">
+      <md-toolbar-row>
+        <span class="copyRight"> © 2017 Copyright Joe Parsley, Jared Luedtke, Adrian Agnic</span>
+        <span class="copyRight"> Beta Version 1.0</span>
+        <span class="toolbar-spacer"></span>
+        <div class="powered-by">
+          <span>Powered by:</span>
+          <button class="button-1" md-button><a href="http://magicthegathering.io/">MTG API</a></button>
+        </div>
+        <div class="copyRight">
+          <span>Links:</span>
+          <button class="button-2" md-button><a href="https://github.com/jluedtke/deck-me">Our GitHub</a></button>
+        </div>
+      </md-toolbar-row>
     </md-toolbar>
   </footer>
 </div>

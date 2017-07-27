@@ -1,14 +1,18 @@
 <div class="container">
   <div class="pie">
+    <h1>Card Type:</h1>
     <app-pie-chart [chartData]="childPieChartData"></app-pie-chart>
   </div>
   <div class="doughnut">
+    <h1>Mana-Curve</h1>
     <app-doughnut-chart [chartData]="childDoughnutChartData"></app-doughnut-chart>
   </div>
   <div class="polar">
+    <h1>Card Rarity:</h1>
     <app-polar-chart [chartData]="childPolarChartData"></app-polar-chart>
   </div>
   <div class="bar">
+    <h1>Converted Mana Cost:</h1>
     <app-bar-chart [chartData]="childBarChartData"></app-bar-chart>
   </div>
 </div>
