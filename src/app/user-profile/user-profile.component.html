@@ -23,8 +23,9 @@
 
       <button md-raised-button color="primary"(click)="updateUser(changeName.value); changeName.value='';">Update Username</button>
 
-      <md-input-container color="accent" #changeEmail>
-        <input mdInput type="text" placeholder="Update your email:" #newEmail>
+      
+      <md-input-container color="accent">
+        <input mdInput type="text" placeholder="Update your email: {{email}}" #changeEmail>
       </md-input-container>
 
       <button  md-raised-button color="primary" (click)="updateEmail(changeEmail.value); changeEmail.value='';">Update Email</button>

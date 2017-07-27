@@ -19,19 +19,31 @@ export class AuthenticationService {
   passwordReset() {
     let email: string = this.afAuth.auth.currentUser.email;
     console.log(email);
-    this.afAuth.auth.sendPasswordResetEmail(email);
+    this.afAuth.auth.sendPasswordResetEmail(email)
+    .catch(error => {
+      alert(error.message);
+    })
   }
 
   passwordResetWithEmail(email: string) {
-    this.afAuth.auth.sendPasswordResetEmail(email);
+    this.afAuth.auth.sendPasswordResetEmail(email)
+      .catch(error => {
+        alert(error.message);
+      })
   }
 
   updateUsername(name: string, photoURL: string = null) {
-    this.afAuth.auth.currentUser.updateProfile({displayName: name, photoURL: null});
+    this.afAuth.auth.currentUser.updateProfile({displayName: name, photoURL: null})
+      .catch(error => {
+        alert(error.message);
+      })
   }
 
   updateEmail(email: string) {
-    this.afAuth.auth.currentUser.updateEmail(email);
+    this.afAuth.auth.currentUser.updateEmail(email)
+    .catch(error => {
+      alert(error.message);
+    })
   }
 
   createUser(email: string, password: string, name: string) {

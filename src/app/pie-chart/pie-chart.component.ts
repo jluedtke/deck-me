@@ -5,7 +5,7 @@ import { AdriansService } from '../adrians.service';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  providers: [ FirebaseToAppService ]
+  providers: [ FirebaseToAppService, AdriansService ]
 })
 export class PieChartComponent {
   @Input() childChartCards: any[];
@@ -16,19 +16,18 @@ export class PieChartComponent {
 
   public data: number[];
   public pieChartLabels:string[] = ['Land', 'Creature', 'Enchantment', 'Instant', 'Sorcery', 'Artifact', 'Planeswalker'];
-  public pieChartData:number[] = [10,10,10,10,10,10,10];
+  public pieChartData:number[] = [1,1,1,1,1,1,1];
   public pieChartType:string = 'pie';
 
-  public chartClicked(e:any):void {
+  chartClicked(e:any):void {
     console.log(e);
   }
 
-  public chartHovered(e:any):void {
+  chartHovered(e:any):void {
     console.log(e);
   }
 
-  public resetGraph() {
+  resetGraph() {
     this.pieChartData = this.aService.getCardTypes(this.childChartCards);
-    console.log(this.data);
   }
 }

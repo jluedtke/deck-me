@@ -25,7 +25,6 @@ export class AppComponent {
       } else {
         this.isLoggedIn = true;
         this.local = this.authService.afAuth.auth.currentUser;
-        console.log(this.local);
       }
     })
   }

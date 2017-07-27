@@ -28,6 +28,7 @@ import { FilterByTypePipe } from './filter-by-type.pipe';
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+import { PolarChartComponent } from './polar-chart/polar-chart.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -50,7 +51,8 @@ export const firebaseConfig = {
     AboutComponent,
     FilterByTypePipe,
     PieChartComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    PolarChartComponent
   ],
   imports: [
     BrowserModule,

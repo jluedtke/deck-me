@@ -9,9 +9,11 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class UserProfileComponent implements OnInit {
 
+  email: string;
   constructor(public authService: AuthenticationService) { }
 
   ngOnInit() {
+    this.email = this.authService.afAuth.auth.currentUser.email;
   }
 
   updateUser(update: string) {
